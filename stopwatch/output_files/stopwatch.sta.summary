@@ -3,195 +3,243 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : -5.392
-TNS   : -237.716
+Slack : -5.247
+TNS   : -220.746
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.380
-TNS   : -71.187
+Slack : -2.791
+TNS   : -161.247
+
+Type  : Slow 1100mV 85C Model Setup 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -2.534
+TNS   : -4.804
 
 Type  : Slow 1100mV 85C Model Setup 'key_start_pause'
-Slack : -0.890
-TNS   : -0.890
+Slack : -0.640
+TNS   : -0.640
 
 Type  : Slow 1100mV 85C Model Setup 'key_display_stop'
-Slack : -0.509
-TNS   : -0.509
+Slack : -0.454
+TNS   : -0.454
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -2.078
-TNS   : -2.078
-
-Type  : Slow 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.354
-TNS   : 0.000
+Slack : -1.718
+TNS   : -3.288
 
 Type  : Slow 1100mV 85C Model Hold 'key_display_stop'
-Slack : 0.554
-TNS   : 0.000
+Slack : -1.323
+TNS   : -1.323
 
 Type  : Slow 1100mV 85C Model Hold 'key_start_pause'
-Slack : 0.869
+Slack : -1.186
+TNS   : -1.186
+
+Type  : Slow 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.081
+TNS   : -0.081
+
+Type  : Slow 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
+Slack : 0.286
 TNS   : 0.000
 
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.457
+TNS   : -34.266
+
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'key_display_stop'
-Slack : -0.555
-TNS   : -0.949
+Slack : -0.419
+TNS   : -0.813
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'key_start_pause'
-Slack : -0.515
-TNS   : -0.909
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.486
-TNS   : -17.187
+Slack : -0.398
+TNS   : -0.792
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_100HZ'
 Slack : -0.394
-TNS   : -25.406
+TNS   : -24.602
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.394
+TNS   : -3.551
 
 Type  : Slow 1100mV 0C Model Setup 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : -5.297
-TNS   : -231.631
+Slack : -5.092
+TNS   : -212.001
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.662
-TNS   : -71.165
+Slack : -2.966
+TNS   : -159.652
+
+Type  : Slow 1100mV 0C Model Setup 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -2.542
+TNS   : -4.852
 
 Type  : Slow 1100mV 0C Model Setup 'key_start_pause'
-Slack : -0.925
-TNS   : -0.925
+Slack : -0.647
+TNS   : -0.647
 
 Type  : Slow 1100mV 0C Model Setup 'key_display_stop'
-Slack : -0.503
-TNS   : -0.503
+Slack : -0.449
+TNS   : -0.449
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -1.949
-TNS   : -1.949
-
-Type  : Slow 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.358
-TNS   : 0.000
+Slack : -1.672
+TNS   : -3.101
 
 Type  : Slow 1100mV 0C Model Hold 'key_display_stop'
-Slack : 0.537
-TNS   : 0.000
+Slack : -1.227
+TNS   : -1.227
 
 Type  : Slow 1100mV 0C Model Hold 'key_start_pause'
-Slack : 0.871
+Slack : -1.170
+TNS   : -1.170
+
+Type  : Slow 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.067
+TNS   : -0.067
+
+Type  : Slow 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
+Slack : 0.273
 TNS   : 0.000
 
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.523
+TNS   : -37.673
+
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'key_display_stop'
-Slack : -0.613
-TNS   : -1.018
+Slack : -0.488
+TNS   : -0.882
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'key_start_pause'
-Slack : -0.563
-TNS   : -0.957
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.550
-TNS   : -18.926
+Slack : -0.450
+TNS   : -0.844
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_100HZ'
 Slack : -0.394
-TNS   : -25.142
+TNS   : -24.656
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.394
+TNS   : -3.791
 
 Type  : Fast 1100mV 85C Model Setup 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : -2.746
-TNS   : -122.843
+Slack : -2.708
+TNS   : -111.418
+
+Type  : Fast 1100mV 85C Model Setup 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -1.739
+TNS   : -3.098
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -1.017
-TNS   : -27.746
+Slack : -1.291
+TNS   : -65.739
 
 Type  : Fast 1100mV 85C Model Setup 'key_start_pause'
-Slack : -0.181
-TNS   : -0.181
+Slack : -0.160
+TNS   : -0.160
 
 Type  : Fast 1100mV 85C Model Setup 'key_display_stop'
-Slack : -0.007
-TNS   : -0.007
+Slack : -0.080
+TNS   : -0.080
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -1.098
-TNS   : -1.098
-
-Type  : Fast 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.110
-TNS   : 0.000
+Slack : -0.919
+TNS   : -1.732
 
 Type  : Fast 1100mV 85C Model Hold 'key_display_stop'
-Slack : 0.298
-TNS   : 0.000
+Slack : -0.823
+TNS   : -0.823
 
 Type  : Fast 1100mV 85C Model Hold 'key_start_pause'
-Slack : 0.446
+Slack : -0.707
+TNS   : -0.707
+
+Type  : Fast 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.091
+TNS   : -0.091
+
+Type  : Fast 1100mV 85C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
+Slack : 0.136
 TNS   : 0.000
 
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.517
+TNS   : -6.628
+
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'key_display_stop'
-Slack : -0.588
-TNS   : -0.827
+Slack : -0.481
+TNS   : -0.610
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'key_start_pause'
-Slack : -0.568
-TNS   : -0.787
+Slack : -0.468
+TNS   : -0.585
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.550
-TNS   : -3.474
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.019
+TNS   : -0.057
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.076
+Slack : 0.127
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : -2.557
-TNS   : -113.669
+Slack : -2.493
+TNS   : -102.118
+
+Type  : Fast 1100mV 0C Model Setup 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -1.721
+TNS   : -3.117
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -1.022
-TNS   : -24.137
+Slack : -1.256
+TNS   : -57.715
 
 Type  : Fast 1100mV 0C Model Setup 'key_start_pause'
-Slack : -0.147
-TNS   : -0.147
+Slack : -0.077
+TNS   : -0.077
 
 Type  : Fast 1100mV 0C Model Setup 'key_display_stop'
-Slack : 0.024
-TNS   : 0.000
+Slack : -0.013
+TNS   : -0.013
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -1.038
-TNS   : -1.038
-
-Type  : Fast 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.102
-TNS   : 0.000
+Slack : -0.934
+TNS   : -1.696
 
 Type  : Fast 1100mV 0C Model Hold 'key_display_stop'
-Slack : 0.268
-TNS   : 0.000
+Slack : -0.814
+TNS   : -0.814
 
 Type  : Fast 1100mV 0C Model Hold 'key_start_pause'
-Slack : 0.417
+Slack : -0.743
+TNS   : -0.743
+
+Type  : Fast 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.082
+TNS   : -0.082
+
+Type  : Fast 1100mV 0C Model Hold 'main_stopwatch:inst|CLOCK_100HZ'
+Slack : 0.122
 TNS   : 0.000
 
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.536
+TNS   : -6.654
+
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'key_display_stop'
-Slack : -0.592
-TNS   : -0.843
+Slack : -0.503
+TNS   : -0.664
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'key_start_pause'
-Slack : -0.575
-TNS   : -0.809
+Slack : -0.493
+TNS   : -0.643
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.567
-TNS   : -3.466
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_40HZ'
+Slack : -0.013
+TNS   : -0.039
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'main_stopwatch:inst|CLOCK_100HZ'
-Slack : 0.092
+Slack : 0.134
 TNS   : 0.000
 
 ------------------------------------------------------------

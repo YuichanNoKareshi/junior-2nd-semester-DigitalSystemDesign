@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stopwatch
-Sat May 08 21:41:02 2021
+Tue May 11 22:22:40 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,12 +13,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +42,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 08 21:41:02 2021      ;
+; Analysis & Synthesis Status     ; Successful - Tue May 11 22:22:40 2021      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; stopwatch                                  ;
 ; Top-level Entity Name           ; stopwatch                                  ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 83                                         ;
+; Total registers                 ; 122                                        ;
 ; Total pins                      ; 50                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
@@ -174,29 +172,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                   ;
-+---------------------------------------------+---------------------------------+
-; Resource                                    ; Usage                           ;
-+---------------------------------------------+---------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 73                              ;
-;                                             ;                                 ;
-; Combinational ALUT usage for logic          ; 121                             ;
-;     -- 7 input functions                    ; 0                               ;
-;     -- 6 input functions                    ; 21                              ;
-;     -- 5 input functions                    ; 7                               ;
-;     -- 4 input functions                    ; 49                              ;
-;     -- <=3 input functions                  ; 44                              ;
-;                                             ;                                 ;
-; Dedicated logic registers                   ; 83                              ;
-;                                             ;                                 ;
-; I/O pins                                    ; 50                              ;
-; Total DSP Blocks                            ; 0                               ;
-; Maximum fan-out node                        ; main_stopwatch:inst|CLOCK_100HZ ;
-; Maximum fan-out                             ; 49                              ;
-; Total fan-out                               ; 792                             ;
-; Average fan-out                             ; 2.61                            ;
-+---------------------------------------------+---------------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 99             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 167            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 27             ;
+;     -- 5 input functions                    ; 7              ;
+;     -- 4 input functions                    ; 49             ;
+;     -- <=3 input functions                  ; 84             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 122            ;
+;                                             ;                ;
+; I/O pins                                    ; 50             ;
+; Total DSP Blocks                            ; 0              ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 66             ;
+; Total fan-out                               ; 1021           ;
+; Average fan-out                             ; 2.62           ;
++---------------------------------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,8 +202,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------+--------------+
-; |stopwatch                                 ; 121 (0)           ; 83 (0)       ; 0                 ; 0          ; 50   ; 0            ; |stopwatch                                                        ; work         ;
-;    |main_stopwatch:inst|                   ; 121 (79)          ; 83 (83)      ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst                                    ; work         ;
+; |stopwatch                                 ; 167 (0)           ; 122 (0)      ; 0                 ; 0          ; 50   ; 0            ; |stopwatch                                                        ; work         ;
+;    |main_stopwatch:inst|                   ; 167 (119)         ; 122 (116)    ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst                                    ; work         ;
+;       |debounce:debounce_counter|          ; 3 (3)             ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst|debounce:debounce_counter          ; work         ;
+;       |debounce:debounce_display|          ; 3 (3)             ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst|debounce:debounce_display          ; work         ;
 ;       |sevenseg:LED8_minute_display_high|  ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst|sevenseg:LED8_minute_display_high  ; work         ;
 ;       |sevenseg:LED8_minute_display_low|   ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst|sevenseg:LED8_minute_display_low   ; work         ;
 ;       |sevenseg:LED8_msecond_display_high| ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |stopwatch|main_stopwatch:inst|sevenseg:LED8_msecond_display_high ; work         ;
@@ -216,40 +216,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                              ;
-+----------------------------------------------------------+--------------------------------------+
-; Register name                                            ; Reason for Removal                   ;
-+----------------------------------------------------------+--------------------------------------+
-; main_stopwatch:inst|debounce:debounce_display|key_prepre ; Stuck at GND due to stuck port clock ;
-; main_stopwatch:inst|debounce:debounce_display|key_pre    ; Stuck at GND due to stuck port clock ;
-; main_stopwatch:inst|debounce:debounce_display|key_now    ; Lost fanout                          ;
-; main_stopwatch:inst|debounce:debounce_counter|key_prepre ; Stuck at GND due to stuck port clock ;
-; main_stopwatch:inst|debounce:debounce_counter|key_pre    ; Stuck at GND due to stuck port clock ;
-; main_stopwatch:inst|debounce:debounce_counter|key_now    ; Lost fanout                          ;
-; Total Number of Removed Registers = 6                    ;                                      ;
-+----------------------------------------------------------+--------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                             ;
-+-------------------------------------------------------+-------------------------+-------------------------------------------------------+
-; Register name                                         ; Reason for Removal      ; Registers Removed due to This Register                ;
-+-------------------------------------------------------+-------------------------+-------------------------------------------------------+
-; main_stopwatch:inst|debounce:debounce_display|key_pre ; Stuck at GND            ; main_stopwatch:inst|debounce:debounce_display|key_now ;
-;                                                       ; due to stuck port clock ;                                                       ;
-; main_stopwatch:inst|debounce:debounce_counter|key_pre ; Stuck at GND            ; main_stopwatch:inst|debounce:debounce_counter|key_now ;
-;                                                       ; due to stuck port clock ;                                                       ;
-+-------------------------------------------------------+-------------------------+-------------------------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 83    ;
-; Number of registers using Synchronous Clear  ; 56    ;
+; Total registers                              ; 122   ;
+; Number of registers using Synchronous Clear  ; 88    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -263,13 +236,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |stopwatch|main_stopwatch:inst|minute_display_low[3]   ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |stopwatch|main_stopwatch:inst|msecond_display_low[3]  ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|msecond_counter_low[0]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|minute_counter_high[3]  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|msecond_counter_high[0] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|second_counter_low[3]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|minute_counter_high[2]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|msecond_counter_high[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|second_counter_low[0]   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|second_counter_high[0]  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|minute_counter_low[2]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |stopwatch|main_stopwatch:inst|minute_counter_low[3]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
@@ -288,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat May 08 21:41:00 2021
+    Info: Processing started: Tue May 11 22:22:38 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c stopwatch
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.bdf
@@ -299,41 +272,37 @@ Info (12021): Found 1 design units, including 1 entities, in source file debounc
     Info (12023): Found entity 1: debounce
 Info (12021): Found 1 design units, including 1 entities, in source file sevenseg.v
     Info (12023): Found entity 1: sevenseg
-Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(49): created implicit net for "CLOCK_40HZ"
 Warning (10227): Verilog HDL Port Declaration warning at sevenseg.v(4): data type declaration for "ledsegments" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at sevenseg.v(3): see declaration for object "ledsegments"
 Info (12127): Elaborating entity "stopwatch" for the top level hierarchy
 Info (12128): Elaborating entity "main_stopwatch" for hierarchy "main_stopwatch:inst"
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(107): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(111): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(117): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at stopwatch.v(123): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(129): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(135): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(127): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(133): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(139): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(145): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(151): truncated value with size 32 to match size of target (4)
 Warning (10034): Output port "led0" at stopwatch.v(9) has no driver
 Warning (10034): Output port "led1" at stopwatch.v(9) has no driver
 Warning (10034): Output port "led2" at stopwatch.v(9) has no driver
 Warning (10034): Output port "led3" at stopwatch.v(9) has no driver
 Info (12128): Elaborating entity "sevenseg" for hierarchy "main_stopwatch:inst|sevenseg:LED8_minute_display_high"
 Info (12128): Elaborating entity "debounce" for hierarchy "main_stopwatch:inst|debounce:debounce_counter"
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "main_stopwatch:inst|CLOCK_40HZ" is missing source, defaulting to GND
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "l0" is stuck at GND
     Warning (13410): Pin "l1" is stuck at GND
     Warning (13410): Pin "l2" is stuck at GND
     Warning (13410): Pin "l3" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 195 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 241 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 145 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info (21061): Implemented 191 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
     Info: Peak virtual memory: 4675 megabytes
-    Info: Processing ended: Sat May 08 21:41:02 2021
+    Info: Processing ended: Tue May 11 22:22:40 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

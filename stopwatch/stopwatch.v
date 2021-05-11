@@ -67,15 +67,15 @@ module main_stopwatch(
 	//produce 25ms(40HZ) clock
 	always @ (posedge CLOCK_50)
 		begin 
-			if (counter_40M == 625999)
+			if (counter_40HZ == 625999)
 				begin
-					counter_250M <= 0;
+					counter_40HZ <= 0;
 					CLOCK_40HZ <= ~CLOCK_40HZ;
 				end
 			
 			else
 				begin
-					counter_40M <= counter_40M + 1;
+					counter_40HZ <= counter_40HZ + 1;
 				end
 		end
 		

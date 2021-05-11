@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat May 08 21:41:57 2021
+Fitter Status : Successful - Tue May 11 22:23:37 2021
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : stopwatch
 Top-level Entity Name : stopwatch
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 67 / 32,070 ( < 1 % )
-Total registers : 83
+Logic utilization (in ALMs) : 96 / 32,070 ( < 1 % )
+Total registers : 122
 Total pins : 50 / 457 ( 11 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
