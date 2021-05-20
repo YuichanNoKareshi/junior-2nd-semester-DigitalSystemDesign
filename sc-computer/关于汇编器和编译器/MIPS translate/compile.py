@@ -27,7 +27,7 @@ Final = []
 
 def decodeR(line_num, reg):
     if (reg[0] != '$'):
-        print "Error at line " + line_num
+        print ("Error at line ", line_num)
     ret = bin(int(reg[1:]))[2:]
     return '0' * (5 - len(ret)) + ret
 
@@ -66,7 +66,7 @@ def parseRinst(line_num, parts):
 def parseIinst(line_num, parts):
     op = INST_I[parts[0]]
 
-    if (parts[0] == 'lui'):
+    if (parts[0] == 'lui' or parts[0] == 'ori' or parts[0] == 'xori'):
         rs = '00000'
         rt = decodeR(line_num, parts[1])
         imm = decodeIMM(line_num, parts[2])
@@ -84,19 +84,19 @@ def parseJinst(line_num, parts):
 
 def parseLine(line_num, line):
     parts = line.split(' ')
-    if INST_R.has_key(parts[0]):
+    if parts[0] in INST_R:
         Final.append(parseRinst(line_num, parts))
     else:
-        if INST_I.has_key(parts[0]):
+        if parts[0] in INST_I:
             Final.append(parseIinst(line_num, parts))
         else:
-            if INST_J.has_key(parts[0]):
+            if parts[0] in INST_J:
                 Final.append(parseJinst(line_num, parts))
             else:
-                print "Error at line ", line_num
+                print ("Error at line ", line_num)
 
 def main():
-    src_name = raw_input("src file: ")
+    src_name = input("src file: ")
     src_file = open(src_name)
     line_num = 0
 
@@ -119,9 +119,8 @@ def main():
     out.write("BEGIN\n")
 
     line_num = 0
-    import string
     for entry in Final:
-        num = string.atoi(entry, 2)
+        num = int(entry, 2)
         out.write("%2x : %08x;\n" % (line_num, num))
         line_num += 1
        # print entry
