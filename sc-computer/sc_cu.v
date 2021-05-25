@@ -58,7 +58,7 @@ module sc_cu (op, func, z, wmem, wreg, regrt, m2reg, aluc, shift,
    assign aluimm  = i_addi | i_andi | i_ori | i_xori | i_lw | i_sw | i_lui;
    assign sext    = i_addi | i_lw | i_sw | i_beq | i_bne;
    assign wmem    = i_sw;
-   assign m2reg   = i_sw | i_lw;
+   assign m2reg   = i_lw;
    assign regrt   = i_addi | i_andi | i_ori | i_xori | i_lw | i_sw | i_lui;
    assign jal     = i_jal;
 
