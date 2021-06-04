@@ -140,4 +140,5 @@ set_global_assignment -name VERILOG_FILE pipeemreg.v
 set_global_assignment -name VERILOG_FILE pipemem.v
 set_global_assignment -name VERILOG_FILE pipemwreg.v
 set_location_assignment PIN_W15 -to and_model
+set_location_assignment PIN_AA15 -to add_model
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

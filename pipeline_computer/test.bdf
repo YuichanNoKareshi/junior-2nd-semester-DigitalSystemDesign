@@ -227,7 +227,7 @@ applicable agreement for further details.
 	(input)
 	(rect 144 640 312 656)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "and_model" (rect 5 0 59 12)(font "Arial" ))
+	(text "and_model" (rect 5 0 58 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -238,6 +238,24 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 80 656 144 672))
+)
+(pin
+	(input)
+	(rect 160 728 328 744)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "add_model" (rect 5 0 59 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 96 744 160 760))
 )
 (pin
 	(output)
@@ -560,7 +578,7 @@ applicable agreement for further details.
 (symbol
 	(rect 440 384 680 592)
 	(text "pipeline_computer_main" (rect 5 0 123 12)(font "Arial" ))
-	(text "inst9" (rect 8 192 31 204)(font "Arial" ))
+	(text "inst3" (rect 8 192 31 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -602,6 +620,13 @@ applicable agreement for further details.
 		(text "and_model" (rect 0 0 53 12)(font "Arial" ))
 		(text "and_model" (rect 21 107 74 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "add_model" (rect 0 0 53 12)(font "Arial" ))
+		(text "add_model" (rect 21 123 74 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
 	)
 	(port
 		(pt 240 32)
@@ -887,3 +912,20 @@ applicable agreement for further details.
 	(pt 760 528)
 	(bus)
 )
+(connector
+	(pt 440 512)
+	(pt 416 512)
+)
+(connector
+	(pt 328 736)
+	(pt 416 736)
+)
+(connector
+	(pt 416 512)
+	(pt 416 736)
+)
+(connector
+	(pt 416 736)
+	(pt 416 744)
+)
+(junction (pt 416 736))

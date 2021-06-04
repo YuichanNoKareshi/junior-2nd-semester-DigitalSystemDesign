@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sc_computer
-Thu Jun 03 20:36:00 2021
+Fri Jun 04 18:02:33 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -19,10 +19,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated
- 15. Source assignments for pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated
- 16. Parameter Settings for User Entity Instance: pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component
- 17. Parameter Settings for User Entity Instance: pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component
+ 14. Source assignments for pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated
+ 15. Source assignments for pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated
+ 16. Parameter Settings for User Entity Instance: pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component
  18. Parameter Settings for Inferred Entity Instance: out_port_seg:inst7|lpm_divide:Mod1
  19. Parameter Settings for Inferred Entity Instance: out_port_seg:inst7|lpm_divide:Div0
  20. Parameter Settings for Inferred Entity Instance: out_port_seg:inst7|lpm_divide:Mod0
@@ -33,11 +33,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  25. Parameter Settings for Inferred Entity Instance: out_port_seg:inst5|lpm_divide:Div0
  26. Parameter Settings for Inferred Entity Instance: out_port_seg:inst5|lpm_divide:Mod0
  27. altsyncram Parameter Settings by Entity Instance
- 28. Port Connectivity Checks: "pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit"
- 29. Port Connectivity Checks: "pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_a"
- 30. Port Connectivity Checks: "pipeline_computer_main:inst9|pipeif:if_stage|cla32:pc_plus4"
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
+ 28. Port Connectivity Checks: "pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit"
+ 29. Port Connectivity Checks: "pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_a"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -63,14 +62,14 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 03 20:36:00 2021      ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 04 18:02:33 2021      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; sc_computer                                ;
 ; Top-level Entity Name           ; test                                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
 ; Total registers                 ; 1466                                       ;
-; Total pins                      ; 55                                         ;
+; Total pins                      ; 56                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 3,072                                      ;
 ; Total DSP Blocks                ; 0                                          ;
@@ -205,7 +204,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; out_port_seg.v                   ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/out_port_seg.v             ;         ;
 ; pipepc.v                         ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipepc.v                   ;         ;
 ; pipeif.v                         ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipeif.v                   ;         ;
-; cla32.v                          ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/cla32.v                    ;         ;
 ; pipeir.v                         ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipeir.v                   ;         ;
 ; pipeid.v                         ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipeid.v                   ;         ;
 ; pipedereg.v                      ; yes             ; User Verilog HDL File                  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipedereg.v                ;         ;
@@ -223,7 +221,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                 ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                               ;         ;
 ; db/altsyncram_oqi1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/db/altsyncram_oqi1.tdf     ;         ;
-; ./source/sc_instmem.mif          ; yes             ; Auto-Found Memory Initialization File  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/source/sc_instmem.mif      ;         ;
+; source/sc_instmem.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/source/sc_instmem.mif      ;         ;
 ; db/altsyncram_59m1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/db/altsyncram_59m1.tdf     ;         ;
 ; source/sc_datamem.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/source/sc_datamem.mif      ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                             ;         ;
@@ -241,24 +239,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------------+
 ; Resource                                    ; Usage                              ;
 +---------------------------------------------+------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2950                               ;
+; Estimate of Logic utilization (ALMs needed) ; 2952                               ;
 ;                                             ;                                    ;
-; Combinational ALUT usage for logic          ; 4678                               ;
-;     -- 7 input functions                    ; 32                                 ;
-;     -- 6 input functions                    ; 1053                               ;
-;     -- 5 input functions                    ; 294                                ;
-;     -- 4 input functions                    ; 390                                ;
-;     -- <=3 input functions                  ; 2909                               ;
+; Combinational ALUT usage for logic          ; 4679                               ;
+;     -- 7 input functions                    ; 33                                 ;
+;     -- 6 input functions                    ; 1055                               ;
+;     -- 5 input functions                    ; 295                                ;
+;     -- 4 input functions                    ; 385                                ;
+;     -- <=3 input functions                  ; 2911                               ;
 ;                                             ;                                    ;
 ; Dedicated logic registers                   ; 1466                               ;
 ;                                             ;                                    ;
-; I/O pins                                    ; 55                                 ;
+; I/O pins                                    ; 56                                 ;
 ; Total MLAB memory bits                      ; 0                                  ;
 ; Total block memory bits                     ; 3072                               ;
 ; Total DSP Blocks                            ; 0                                  ;
 ; Maximum fan-out node                        ; clock_and_mem_clock:inst|clock_out ;
 ; Maximum fan-out                             ; 1364                               ;
-; Total fan-out                               ; 23164                              ;
+; Total fan-out                               ; 23175                              ;
 ; Average fan-out                             ; 3.67                               ;
 +---------------------------------------------+------------------------------------+
 
@@ -268,7 +266,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |test                                           ; 4678 (0)          ; 1466 (0)     ; 3072              ; 0          ; 55   ; 0            ; |test                                                                                                                                    ; work         ;
+; |test                                           ; 4679 (0)          ; 1466 (0)     ; 3072              ; 0          ; 56   ; 0            ; |test                                                                                                                                    ; work         ;
 ;    |clock_and_mem_clock:inst|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |test|clock_and_mem_clock:inst                                                                                                           ; work         ;
 ;    |out_port_seg:inst5|                         ; 946 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|out_port_seg:inst5                                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                         ; 313 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|out_port_seg:inst5|lpm_divide:Div0                                                                                                 ; work         ;
@@ -315,41 +313,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |alt_u_div_mve:divider|          ; 317 (317)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|out_port_seg:inst7|lpm_divide:Mod1|lpm_divide_l3m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider                 ; work         ;
 ;       |sevenseg:display_0|                      ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|out_port_seg:inst7|sevenseg:display_0                                                                                              ; work         ;
 ;       |sevenseg:display_1|                      ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|out_port_seg:inst7|sevenseg:display_1                                                                                              ; work         ;
-;    |pipeline_computer_main:inst9|               ; 1839 (0)          ; 1465 (0)     ; 3072              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9                                                                                                       ; work         ;
-;       |mux2x32:wb_stage|                        ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|mux2x32:wb_stage                                                                                      ; work         ;
-;       |pipedereg:de_reg|                        ; 0 (0)             ; 128 (128)    ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipedereg:de_reg                                                                                      ; work         ;
-;       |pipeemreg:em_reg|                        ; 0 (0)             ; 72 (72)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeemreg:em_reg                                                                                      ; work         ;
-;       |pipeexe:exe_stage|                       ; 619 (35)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage                                                                                     ; work         ;
-;          |alu:al_unit|                          ; 322 (322)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit                                                                         ; work         ;
-;          |mux2x32:e_alu_a|                      ; 26 (26)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_a                                                                     ; work         ;
-;          |mux2x32:e_alu_b|                      ; 30 (30)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_b                                                                     ; work         ;
-;          |mux2x32:e_choose_epc|                 ; 206 (206)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc                                                                ; work         ;
-;       |pipeid:id_stage|                         ; 1077 (70)         ; 992 (0)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage                                                                                       ; work         ;
-;          |mux2x5:rd_rt|                         ; 5 (5)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage|mux2x5:rd_rt                                                                          ; work         ;
-;          |mux4x32:alu_a|                        ; 461 (461)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_a                                                                         ; work         ;
-;          |mux4x32:alu_b|                        ; 457 (457)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_b                                                                         ; work         ;
-;          |regfile:regf|                         ; 33 (33)           ; 992 (992)    ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage|regfile:regf                                                                          ; work         ;
-;          |sc_cu:cu|                             ; 51 (51)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeid:id_stage|sc_cu:cu                                                                              ; work         ;
-;       |pipeif:if_stage|                         ; 62 (0)            ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage                                                                                       ; work         ;
-;          |cla32:pc_plus4|                       ; 30 (30)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage|cla32:pc_plus4                                                                        ; work         ;
-;          |lpm_rom_irom:irom|                    ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom                                                                     ; work         ;
-;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component                                     ; work         ;
-;                |altsyncram_oqi1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated      ; work         ;
-;          |mux4x32:selectnewpc|                  ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeif:if_stage|mux4x32:selectnewpc                                                                   ; work         ;
-;       |pipeir:inst_reg|                         ; 0 (0)             ; 64 (0)       ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeir:inst_reg                                                                                       ; work         ;
-;          |dffe32:instruction|                   ; 0 (0)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeir:inst_reg|dffe32:instruction                                                                    ; work         ;
-;          |dffe32:pc_plus4|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipeir:inst_reg|dffe32:pc_plus4                                                                       ; work         ;
-;       |pipemem:mem_stage|                       ; 48 (1)            ; 106 (0)      ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage                                                                                     ; work         ;
-;          |io_input:io_input_reg|                ; 12 (0)            ; 10 (10)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg                                                               ; work         ;
-;             |io_input_mux:io_imput_mux2x32|     ; 12 (12)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32                                 ; work         ;
-;          |io_output:io_output_reg|              ; 3 (3)             ; 96 (96)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|io_output:io_output_reg                                                             ; work         ;
-;          |lpm_ram_dq_dram:dram|                 ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram                                                                ; work         ;
-;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component                                ; work         ;
-;                |altsyncram_59m1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated ; work         ;
-;          |mux2x32:mem_io_dataout_mux|           ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|mux2x32:mem_io_dataout_mux                                                          ; work         ;
-;       |pipemwreg:mw_reg|                        ; 0 (0)             ; 71 (71)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipemwreg:mw_reg                                                                                      ; work         ;
-;       |pipepc:prog_cnt|                         ; 1 (0)             ; 32 (0)       ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipepc:prog_cnt                                                                                       ; work         ;
-;          |dffe32:next_pc|                       ; 1 (1)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst9|pipepc:prog_cnt|dffe32:next_pc                                                                        ; work         ;
+;    |pipeline_computer_main:inst3|               ; 1840 (0)          ; 1465 (0)     ; 3072              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3                                                                                                       ; work         ;
+;       |mux2x32:wb_stage|                        ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|mux2x32:wb_stage                                                                                      ; work         ;
+;       |pipedereg:de_reg|                        ; 0 (0)             ; 128 (128)    ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipedereg:de_reg                                                                                      ; work         ;
+;       |pipeemreg:em_reg|                        ; 0 (0)             ; 72 (72)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeemreg:em_reg                                                                                      ; work         ;
+;       |pipeexe:exe_stage|                       ; 619 (35)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage                                                                                     ; work         ;
+;          |alu:al_unit|                          ; 322 (322)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit                                                                         ; work         ;
+;          |mux2x32:e_alu_a|                      ; 26 (26)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_a                                                                     ; work         ;
+;          |mux2x32:e_alu_b|                      ; 30 (30)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_b                                                                     ; work         ;
+;          |mux2x32:e_choose_epc|                 ; 206 (206)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc                                                                ; work         ;
+;       |pipeid:id_stage|                         ; 1077 (70)         ; 992 (0)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage                                                                                       ; work         ;
+;          |mux2x5:rd_rt|                         ; 5 (5)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage|mux2x5:rd_rt                                                                          ; work         ;
+;          |mux4x32:alu_a|                        ; 461 (461)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_a                                                                         ; work         ;
+;          |mux4x32:alu_b|                        ; 457 (457)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_b                                                                         ; work         ;
+;          |regfile:regf|                         ; 33 (33)           ; 992 (992)    ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage|regfile:regf                                                                          ; work         ;
+;          |sc_cu:cu|                             ; 51 (51)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeid:id_stage|sc_cu:cu                                                                              ; work         ;
+;       |pipeif:if_stage|                         ; 62 (30)           ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeif:if_stage                                                                                       ; work         ;
+;          |lpm_rom_irom:irom|                    ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom                                                                     ; work         ;
+;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component                                     ; work         ;
+;                |altsyncram_oqi1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated      ; work         ;
+;          |mux4x32:selectnewpc|                  ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeif:if_stage|mux4x32:selectnewpc                                                                   ; work         ;
+;       |pipeir:inst_reg|                         ; 0 (0)             ; 64 (0)       ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeir:inst_reg                                                                                       ; work         ;
+;          |dffe32:instruction|                   ; 0 (0)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeir:inst_reg|dffe32:instruction                                                                    ; work         ;
+;          |dffe32:pc_plus4|                      ; 0 (0)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipeir:inst_reg|dffe32:pc_plus4                                                                       ; work         ;
+;       |pipemem:mem_stage|                       ; 49 (1)            ; 106 (0)      ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage                                                                                     ; work         ;
+;          |io_input:io_input_reg|                ; 13 (0)            ; 10 (10)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg                                                               ; work         ;
+;             |io_input_mux:io_imput_mux2x32|     ; 13 (13)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32                                 ; work         ;
+;          |io_output:io_output_reg|              ; 3 (3)             ; 96 (96)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|io_output:io_output_reg                                                             ; work         ;
+;          |lpm_ram_dq_dram:dram|                 ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram                                                                ; work         ;
+;             |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component                                ; work         ;
+;                |altsyncram_59m1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024              ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated ; work         ;
+;          |mux2x32:mem_io_dataout_mux|           ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|mux2x32:mem_io_dataout_mux                                                          ; work         ;
+;       |pipemwreg:mw_reg|                        ; 0 (0)             ; 71 (71)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipemwreg:mw_reg                                                                                      ; work         ;
+;       |pipepc:prog_cnt|                         ; 1 (0)             ; 32 (0)       ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipepc:prog_cnt                                                                                       ; work         ;
+;          |dffe32:next_pc|                       ; 1 (1)             ; 32 (32)      ; 0                 ; 0          ; 0    ; 0            ; |test|pipeline_computer_main:inst3|pipepc:prog_cnt|dffe32:next_pc                                                                        ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -359,8 +356,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------------+
 ; Name                                                                                                                                          ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                     ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------------+
-; pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated|ALTSYNCRAM      ; AUTO ; ROM         ; 64           ; 32           ; --           ; --           ; 2048 ; ./source/sc_instmem.mif ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32           ; 32           ; --           ; --           ; 1024 ; ./source/sc_datamem.mif ;
+; pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated|ALTSYNCRAM      ; AUTO ; ROM         ; 64           ; 32           ; --           ; --           ; 2048 ; ./source/sc_instmem.mif ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32           ; 32           ; --           ; --           ; 1024 ; ./source/sc_datamem.mif ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------------+
 
 
@@ -369,8 +366,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                           ; IP Include File                                                                  ;
 +--------+--------------+---------+--------------+--------------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; Altera ; LPM_ROM      ; N/A     ; N/A          ; N/A          ; |test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom      ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/lpm_rom_irom.v    ;
-; Altera ; LPM_RAM_DQ   ; N/A     ; N/A          ; N/A          ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/lpm_ram_dq_dram.v ;
+; Altera ; LPM_ROM      ; N/A     ; N/A          ; N/A          ; |test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom      ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/lpm_rom_irom.v    ;
+; Altera ; LPM_RAM_DQ   ; N/A     ; N/A          ; N/A          ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram ; C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/lpm_ram_dq_dram.v ;
 +--------+--------------+---------+--------------+--------------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 
@@ -379,11 +376,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------------+
 ; Latch Name                                                                                              ; Latch Enable Signal                                                                                        ; Free of Timing Hazards ;
 +---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------------+
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[0] ; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[4] ; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[1] ; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[2] ; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[3] ; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[0] ; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[4] ; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[1] ; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[2] ; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[3] ; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|WideOr0 ; yes                    ;
 ; Number of user-specified and inferred latches = 5                                                       ;                                                                                                            ;                        ;
 +---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -394,9 +391,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 ; Register name                                                                       ; Reason for Removal                                                 ;
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|in_reg1[5..31] ; Stuck at GND due to stuck port data_in                             ;
-; pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|in_reg0[5..31] ; Stuck at GND due to stuck port data_in                             ;
-; pipeline_computer_main:inst9|pipedereg:de_reg|eimm[16..30]                          ; Merged with pipeline_computer_main:inst9|pipedereg:de_reg|eimm[31] ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|in_reg1[5..31] ; Stuck at GND due to stuck port data_in                             ;
+; pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|in_reg0[5..31] ; Stuck at GND due to stuck port data_in                             ;
+; pipeline_computer_main:inst3|pipedereg:de_reg|eimm[16..30]                          ; Merged with pipeline_computer_main:inst3|pipedereg:de_reg|eimm[31] ;
 ; Total Number of Removed Registers = 69                                              ;                                                                    ;
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
@@ -421,28 +418,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |test|pipeline_computer_main:inst9|pipepc:prog_cnt|dffe32:next_pc|q[0]                                             ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |test|pipeline_computer_main:inst9|pipepc:prog_cnt|dffe32:next_pc|q[15]                                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit|ShiftRight0                                       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit|ShiftRight1                                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeid:id_stage|sc_cu:cu|fwdb[1]                                                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeid:id_stage|sc_cu:cu|fwda[1]                                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|Selector3 ;
-; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_b|Mux22                                             ;
-; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_a|Mux8                                              ;
-; 23:1               ; 7 bits    ; 105 LEs       ; 77 LEs               ; 28 LEs                 ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc|y[10]                                    ;
-; 24:1               ; 11 bits   ; 176 LEs       ; 121 LEs              ; 55 LEs                 ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc|y[23]                                    ;
-; 24:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc|y[7]                                     ;
-; 25:1               ; 3 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc|y[2]                                     ;
-; 26:1               ; 3 bits    ; 51 LEs        ; 36 LEs               ; 15 LEs                 ; No         ; |test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc|y[29]                                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |test|pipeline_computer_main:inst3|pipepc:prog_cnt|dffe32:next_pc|q[0]                                             ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |test|pipeline_computer_main:inst3|pipepc:prog_cnt|dffe32:next_pc|q[15]                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit|ShiftRight0                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit|ShiftRight1                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit|ShiftLeft0                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeid:id_stage|sc_cu:cu|fwdb[1]                                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeid:id_stage|sc_cu:cu|fwda[1]                                                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|Selector4 ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_b|Mux24                                             ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 736 LEs              ; 0 LEs                  ; No         ; |test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_a|Mux7                                              ;
+; 23:1               ; 7 bits    ; 105 LEs       ; 77 LEs               ; 28 LEs                 ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc|y[11]                                    ;
+; 24:1               ; 11 bits   ; 176 LEs       ; 121 LEs              ; 55 LEs                 ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc|y[23]                                    ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc|y[4]                                     ;
+; 25:1               ; 3 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc|y[1]                                     ;
+; 26:1               ; 3 bits    ; 51 LEs        ; 36 LEs               ; 15 LEs                 ; No         ; |test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc|y[28]                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated ;
+; Source assignments for pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                                     ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
@@ -451,7 +448,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated ;
+; Source assignments for pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                                          ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------+
@@ -460,7 +457,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component ;
+; Parameter Settings for User Entity Instance: pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component ;
 +------------------------------------+-------------------------+------------------------------------------------------------------------------+
 ; Parameter Name                     ; Value                   ; Type                                                                         ;
 +------------------------------------+-------------------------+------------------------------------------------------------------------------+
@@ -521,7 +518,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component ;
+; Parameter Settings for User Entity Instance: pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component ;
 +------------------------------------+-------------------------+-----------------------------------------------------------------------------------+
 ; Parameter Name                     ; Value                   ; Type                                                                              ;
 +------------------------------------+-------------------------+-----------------------------------------------------------------------------------+
@@ -794,7 +791,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                                                                                               ;
 +-------------------------------------------+-----------------------------------------------------------------------------------------------------+
 ; Number of entity instances                ; 2                                                                                                   ;
-; Entity Instance                           ; pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component      ;
+; Entity Instance                           ; pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component      ;
 ;     -- OPERATION_MODE                     ; ROM                                                                                                 ;
 ;     -- WIDTH_A                            ; 32                                                                                                  ;
 ;     -- NUMWORDS_A                         ; 64                                                                                                  ;
@@ -805,7 +802,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                        ;
 ;     -- RAM_BLOCK_TYPE                     ; M4K                                                                                                 ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                           ;
-; Entity Instance                           ; pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component ;
+; Entity Instance                           ; pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                                         ;
 ;     -- WIDTH_A                            ; 32                                                                                                  ;
 ;     -- NUMWORDS_A                         ; 32                                                                                                  ;
@@ -820,7 +817,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit"                         ;
+; Port Connectivity Checks: "pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit"                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -829,7 +826,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_a" ;
+; Port Connectivity Checks: "pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_a" ;
 +-----------+-------+----------+-------------------------------------------------------------+
 ; Port      ; Type  ; Severity ; Details                                                     ;
 +-----------+-------+----------+-------------------------------------------------------------+
@@ -837,24 +834,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+-------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pipeline_computer_main:inst9|pipeif:if_stage|cla32:pc_plus4" ;
-+----------+-------+----------+-----------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                   ;
-+----------+-------+----------+-----------------------------------------------------------+
-; b[31..3] ; Input ; Info     ; Stuck at GND                                              ;
-; b[1..0]  ; Input ; Info     ; Stuck at GND                                              ;
-; b[2]     ; Input ; Info     ; Stuck at VCC                                              ;
-; sub      ; Input ; Info     ; Stuck at GND                                              ;
-+----------+-------+----------+-----------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -864,7 +849,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 03 20:35:47 2021
+    Info: Processing started: Fri Jun 04 18:02:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sc_computer -c sc_computer
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline_computer_main.v
@@ -937,16 +922,15 @@ Info (12128): Elaborating entity "out_port_seg" for hierarchy "out_port_seg:inst
 Warning (10230): Verilog HDL assignment warning at out_port_seg.v(12): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at out_port_seg.v(13): truncated value with size 32 to match size of target (4)
 Info (12128): Elaborating entity "sevenseg" for hierarchy "out_port_seg:inst7|sevenseg:display_1"
-Info (12128): Elaborating entity "pipeline_computer_main" for hierarchy "pipeline_computer_main:inst9"
-Info (12128): Elaborating entity "pipepc" for hierarchy "pipeline_computer_main:inst9|pipepc:prog_cnt"
-Info (12128): Elaborating entity "dffe32" for hierarchy "pipeline_computer_main:inst9|pipepc:prog_cnt|dffe32:next_pc"
-Info (12128): Elaborating entity "pipeif" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage"
-Info (12128): Elaborating entity "mux4x32" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage|mux4x32:selectnewpc"
-Info (12128): Elaborating entity "cla32" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage|cla32:pc_plus4"
-Info (12128): Elaborating entity "lpm_rom_irom" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component" with the following parameter:
+Info (12128): Elaborating entity "pipeline_computer_main" for hierarchy "pipeline_computer_main:inst3"
+Info (12128): Elaborating entity "pipepc" for hierarchy "pipeline_computer_main:inst3|pipepc:prog_cnt"
+Info (12128): Elaborating entity "dffe32" for hierarchy "pipeline_computer_main:inst3|pipepc:prog_cnt|dffe32:next_pc"
+Info (12128): Elaborating entity "pipeif" for hierarchy "pipeline_computer_main:inst3|pipeif:if_stage"
+Info (12128): Elaborating entity "mux4x32" for hierarchy "pipeline_computer_main:inst3|pipeif:if_stage|mux4x32:selectnewpc"
+Info (12128): Elaborating entity "lpm_rom_irom" for hierarchy "pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "./source/sc_instmem.mif"
@@ -965,25 +949,22 @@ Info (12133): Instantiated megafunction "pipeline_computer_main:inst9|pipeif:if_
 Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_oqi1.tdf
     Info (12023): Found entity 1: altsyncram_oqi1
-Info (12128): Elaborating entity "altsyncram_oqi1" for hierarchy "pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated"
-Warning (113028): 104 out of 128 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 24 to 127 are not initialized
-Critical Warning (127004): Memory depth (64) in the design file differs from memory depth (128) in the Memory Initialization File "C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/source/sc_instmem.mif" -- truncated remaining initial content value to fit RAM
-Info (12128): Elaborating entity "pipeir" for hierarchy "pipeline_computer_main:inst9|pipeir:inst_reg"
-Info (12128): Elaborating entity "pipeid" for hierarchy "pipeline_computer_main:inst9|pipeid:id_stage"
-Info (12128): Elaborating entity "sc_cu" for hierarchy "pipeline_computer_main:inst9|pipeid:id_stage|sc_cu:cu"
-Info (12128): Elaborating entity "regfile" for hierarchy "pipeline_computer_main:inst9|pipeid:id_stage|regfile:regf"
-Info (12128): Elaborating entity "mux2x5" for hierarchy "pipeline_computer_main:inst9|pipeid:id_stage|mux2x5:rd_rt"
-Info (12128): Elaborating entity "pipedereg" for hierarchy "pipeline_computer_main:inst9|pipedereg:de_reg"
-Info (12128): Elaborating entity "pipeexe" for hierarchy "pipeline_computer_main:inst9|pipeexe:exe_stage"
-Info (12128): Elaborating entity "mux2x32" for hierarchy "pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_a"
-Info (12128): Elaborating entity "alu" for hierarchy "pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit"
-Info (12128): Elaborating entity "pipeemreg" for hierarchy "pipeline_computer_main:inst9|pipeemreg:em_reg"
-Info (12128): Elaborating entity "pipemem" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage"
-Info (12128): Elaborating entity "lpm_ram_dq_dram" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component" with the following parameter:
+Info (12128): Elaborating entity "altsyncram_oqi1" for hierarchy "pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated"
+Info (12128): Elaborating entity "pipeir" for hierarchy "pipeline_computer_main:inst3|pipeir:inst_reg"
+Info (12128): Elaborating entity "pipeid" for hierarchy "pipeline_computer_main:inst3|pipeid:id_stage"
+Info (12128): Elaborating entity "sc_cu" for hierarchy "pipeline_computer_main:inst3|pipeid:id_stage|sc_cu:cu"
+Info (12128): Elaborating entity "regfile" for hierarchy "pipeline_computer_main:inst3|pipeid:id_stage|regfile:regf"
+Info (12128): Elaborating entity "mux2x5" for hierarchy "pipeline_computer_main:inst3|pipeid:id_stage|mux2x5:rd_rt"
+Info (12128): Elaborating entity "pipedereg" for hierarchy "pipeline_computer_main:inst3|pipedereg:de_reg"
+Info (12128): Elaborating entity "pipeexe" for hierarchy "pipeline_computer_main:inst3|pipeexe:exe_stage"
+Info (12128): Elaborating entity "mux2x32" for hierarchy "pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_a"
+Info (12128): Elaborating entity "alu" for hierarchy "pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit"
+Info (12128): Elaborating entity "pipeemreg" for hierarchy "pipeline_computer_main:inst3|pipeemreg:em_reg"
+Info (12128): Elaborating entity "pipemem" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage"
+Info (12128): Elaborating entity "lpm_ram_dq_dram" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "./source/sc_datamem.mif"
@@ -1002,46 +983,45 @@ Info (12133): Instantiated megafunction "pipeline_computer_main:inst9|pipemem:me
 Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_59m1.tdf
     Info (12023): Found entity 1: altsyncram_59m1
-Info (12128): Elaborating entity "altsyncram_59m1" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated"
-Info (12128): Elaborating entity "io_output" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|io_output:io_output_reg"
-Info (12128): Elaborating entity "io_input" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg"
-Info (12128): Elaborating entity "io_input_mux" for hierarchy "pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32"
-Warning (10270): Verilog HDL Case Statement warning at io_input.v(31): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at io_input.v(39): incomplete case statement has no default case item
+Info (12128): Elaborating entity "altsyncram_59m1" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated"
+Info (12128): Elaborating entity "io_output" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|io_output:io_output_reg"
+Info (12128): Elaborating entity "io_input" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg"
+Info (12128): Elaborating entity "io_input_mux" for hierarchy "pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32"
+Warning (10270): Verilog HDL Case Statement warning at io_input.v(29): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at io_input.v(29): inferring latch(es) for variable "y", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "y[0]" at io_input.v(39)
-Info (10041): Inferred latch for "y[1]" at io_input.v(39)
-Info (10041): Inferred latch for "y[2]" at io_input.v(39)
-Info (10041): Inferred latch for "y[3]" at io_input.v(39)
-Info (10041): Inferred latch for "y[4]" at io_input.v(39)
-Info (10041): Inferred latch for "y[5]" at io_input.v(39)
-Info (10041): Inferred latch for "y[6]" at io_input.v(39)
-Info (10041): Inferred latch for "y[7]" at io_input.v(39)
-Info (10041): Inferred latch for "y[8]" at io_input.v(39)
-Info (10041): Inferred latch for "y[9]" at io_input.v(39)
-Info (10041): Inferred latch for "y[10]" at io_input.v(39)
-Info (10041): Inferred latch for "y[11]" at io_input.v(39)
-Info (10041): Inferred latch for "y[12]" at io_input.v(39)
-Info (10041): Inferred latch for "y[13]" at io_input.v(39)
-Info (10041): Inferred latch for "y[14]" at io_input.v(39)
-Info (10041): Inferred latch for "y[15]" at io_input.v(39)
-Info (10041): Inferred latch for "y[16]" at io_input.v(39)
-Info (10041): Inferred latch for "y[17]" at io_input.v(39)
-Info (10041): Inferred latch for "y[18]" at io_input.v(39)
-Info (10041): Inferred latch for "y[19]" at io_input.v(39)
-Info (10041): Inferred latch for "y[20]" at io_input.v(39)
-Info (10041): Inferred latch for "y[21]" at io_input.v(39)
-Info (10041): Inferred latch for "y[22]" at io_input.v(39)
-Info (10041): Inferred latch for "y[23]" at io_input.v(39)
-Info (10041): Inferred latch for "y[24]" at io_input.v(39)
-Info (10041): Inferred latch for "y[25]" at io_input.v(39)
-Info (10041): Inferred latch for "y[26]" at io_input.v(39)
-Info (10041): Inferred latch for "y[27]" at io_input.v(39)
-Info (10041): Inferred latch for "y[28]" at io_input.v(39)
-Info (10041): Inferred latch for "y[29]" at io_input.v(39)
-Info (10041): Inferred latch for "y[30]" at io_input.v(39)
-Info (10041): Inferred latch for "y[31]" at io_input.v(39)
-Info (12128): Elaborating entity "pipemwreg" for hierarchy "pipeline_computer_main:inst9|pipemwreg:mw_reg"
+Info (10041): Inferred latch for "y[0]" at io_input.v(29)
+Info (10041): Inferred latch for "y[1]" at io_input.v(29)
+Info (10041): Inferred latch for "y[2]" at io_input.v(29)
+Info (10041): Inferred latch for "y[3]" at io_input.v(29)
+Info (10041): Inferred latch for "y[4]" at io_input.v(29)
+Info (10041): Inferred latch for "y[5]" at io_input.v(29)
+Info (10041): Inferred latch for "y[6]" at io_input.v(29)
+Info (10041): Inferred latch for "y[7]" at io_input.v(29)
+Info (10041): Inferred latch for "y[8]" at io_input.v(29)
+Info (10041): Inferred latch for "y[9]" at io_input.v(29)
+Info (10041): Inferred latch for "y[10]" at io_input.v(29)
+Info (10041): Inferred latch for "y[11]" at io_input.v(29)
+Info (10041): Inferred latch for "y[12]" at io_input.v(29)
+Info (10041): Inferred latch for "y[13]" at io_input.v(29)
+Info (10041): Inferred latch for "y[14]" at io_input.v(29)
+Info (10041): Inferred latch for "y[15]" at io_input.v(29)
+Info (10041): Inferred latch for "y[16]" at io_input.v(29)
+Info (10041): Inferred latch for "y[17]" at io_input.v(29)
+Info (10041): Inferred latch for "y[18]" at io_input.v(29)
+Info (10041): Inferred latch for "y[19]" at io_input.v(29)
+Info (10041): Inferred latch for "y[20]" at io_input.v(29)
+Info (10041): Inferred latch for "y[21]" at io_input.v(29)
+Info (10041): Inferred latch for "y[22]" at io_input.v(29)
+Info (10041): Inferred latch for "y[23]" at io_input.v(29)
+Info (10041): Inferred latch for "y[24]" at io_input.v(29)
+Info (10041): Inferred latch for "y[25]" at io_input.v(29)
+Info (10041): Inferred latch for "y[26]" at io_input.v(29)
+Info (10041): Inferred latch for "y[27]" at io_input.v(29)
+Info (10041): Inferred latch for "y[28]" at io_input.v(29)
+Info (10041): Inferred latch for "y[29]" at io_input.v(29)
+Info (10041): Inferred latch for "y[30]" at io_input.v(29)
+Info (10041): Inferred latch for "y[31]" at io_input.v(29)
+Info (12128): Elaborating entity "pipemwreg" for hierarchy "pipeline_computer_main:inst3|pipemwreg:mw_reg"
 Info (12128): Elaborating entity "clock_and_mem_clock" for hierarchy "clock_and_mem_clock:inst"
 Info (12128): Elaborating entity "in_port" for hierarchy "in_port:inst1"
 Warning (10034): Output port "out[31..5]" at in_port.v(6) has no driver
@@ -1075,28 +1055,28 @@ Info (12133): Instantiated megafunction "out_port_seg:inst7|lpm_divide:Div0" wit
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ibm.tdf
     Info (12023): Found entity 1: lpm_divide_ibm
-Warning (13012): Latch pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst9|pipeemreg:em_reg|malu[7]
-Warning (13012): Latch pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst9|pipeemreg:em_reg|malu[3]
-Warning (13012): Latch pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst9|pipeemreg:em_reg|malu[3]
-Warning (13012): Latch pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst9|pipeemreg:em_reg|malu[3]
-Warning (13012): Latch pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst9|pipeemreg:em_reg|malu[3]
+Warning (13012): Latch pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst3|pipeemreg:em_reg|malu[7]
+Warning (13012): Latch pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]
+Warning (13012): Latch pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]
+Warning (13012): Latch pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]
+Warning (13012): Latch pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32|y[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6150 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
+Info (21057): Implemented 6152 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 6031 logic cells
+    Info (21061): Implemented 6032 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
     Info: Peak virtual memory: 4723 megabytes
-    Info: Processing ended: Thu Jun 03 20:36:00 2021
+    Info: Processing ended: Fri Jun 04 18:02:34 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 

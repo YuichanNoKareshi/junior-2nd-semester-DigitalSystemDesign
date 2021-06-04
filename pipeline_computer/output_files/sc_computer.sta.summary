@@ -3,147 +3,147 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clock_and_mem_clock:inst|clock_out'
-Slack : -13.346
-TNS   : -6504.410
+Slack : -13.011
+TNS   : -6496.630
 
-Type  : Slow 1100mV 85C Model Setup 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -6.864
-TNS   : -28.964
+Type  : Slow 1100mV 85C Model Setup 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -6.428
+TNS   : -31.144
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -3.655
-TNS   : -461.132
+Slack : -4.442
+TNS   : -561.199
 
 Type  : Slow 1100mV 85C Model Hold 'clock_and_mem_clock:inst|clock_out'
-Slack : -4.192
-TNS   : -87.766
+Slack : -2.470
+TNS   : -107.140
+
+Type  : Slow 1100mV 85C Model Hold 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -1.588
+TNS   : -5.907
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : -1.355
-TNS   : -90.228
-
-Type  : Slow 1100mV 85C Model Hold 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -1.203
-TNS   : -5.287
+Slack : -0.938
+TNS   : -60.794
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_and_mem_clock:inst|clock_out'
 Slack : -2.174
-TNS   : -981.878
+TNS   : -1009.610
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -222.701
+TNS   : -223.067
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : 0.046
-TNS   : 0.000
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -0.071
+TNS   : -0.187
 
 Type  : Slow 1100mV 0C Model Setup 'clock_and_mem_clock:inst|clock_out'
-Slack : -13.295
-TNS   : -6528.827
+Slack : -12.982
+TNS   : -6463.039
 
-Type  : Slow 1100mV 0C Model Setup 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -6.824
-TNS   : -28.800
+Type  : Slow 1100mV 0C Model Setup 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -6.314
+TNS   : -30.649
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -3.442
-TNS   : -432.801
+Slack : -4.178
+TNS   : -525.691
 
 Type  : Slow 1100mV 0C Model Hold 'clock_and_mem_clock:inst|clock_out'
-Slack : -4.181
-TNS   : -85.745
+Slack : -2.387
+TNS   : -99.536
+
+Type  : Slow 1100mV 0C Model Hold 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -1.554
+TNS   : -5.841
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : -1.576
-TNS   : -109.379
-
-Type  : Slow 1100mV 0C Model Hold 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -1.128
-TNS   : -5.064
+Slack : -0.965
+TNS   : -72.546
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_and_mem_clock:inst|clock_out'
 Slack : -2.174
-TNS   : -1054.439
+TNS   : -1023.122
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -226.306
+TNS   : -227.157
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : 0.012
-TNS   : 0.000
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -0.081
+TNS   : -0.218
 
 Type  : Fast 1100mV 85C Model Setup 'clock_and_mem_clock:inst|clock_out'
-Slack : -7.920
-TNS   : -3874.527
+Slack : -8.066
+TNS   : -3828.640
 
-Type  : Fast 1100mV 85C Model Setup 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -3.612
-TNS   : -14.480
+Type  : Fast 1100mV 85C Model Setup 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -3.184
+TNS   : -15.300
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -1.771
-TNS   : -221.566
+Slack : -2.236
+TNS   : -276.160
 
 Type  : Fast 1100mV 85C Model Hold 'clock_and_mem_clock:inst|clock_out'
-Slack : -2.342
-TNS   : -50.045
+Slack : -1.379
+TNS   : -60.563
 
-Type  : Fast 1100mV 85C Model Hold 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -0.807
-TNS   : -3.666
+Type  : Fast 1100mV 85C Model Hold 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -1.140
+TNS   : -4.248
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : -0.696
-TNS   : -49.886
+Slack : -0.466
+TNS   : -26.986
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -176.847
+TNS   : -176.630
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_and_mem_clock:inst|clock_out'
 Slack : -2.174
-TNS   : -101.594
+TNS   : -102.749
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : 0.099
-TNS   : 0.000
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -0.074
+TNS   : -0.150
 
 Type  : Fast 1100mV 0C Model Setup 'clock_and_mem_clock:inst|clock_out'
-Slack : -7.281
-TNS   : -3578.160
+Slack : -7.488
+TNS   : -3512.136
 
-Type  : Fast 1100mV 0C Model Setup 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -3.491
-TNS   : -14.139
+Type  : Fast 1100mV 0C Model Setup 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -3.068
+TNS   : -14.698
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -1.617
-TNS   : -201.880
+Slack : -2.031
+TNS   : -249.187
 
 Type  : Fast 1100mV 0C Model Hold 'clock_and_mem_clock:inst|clock_out'
-Slack : -2.338
-TNS   : -53.003
+Slack : -1.393
+TNS   : -60.238
+
+Type  : Fast 1100mV 0C Model Hold 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : -1.054
+TNS   : -3.893
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : -0.860
-TNS   : -65.757
-
-Type  : Fast 1100mV 0C Model Hold 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : -0.700
-TNS   : -3.270
+Slack : -0.559
+TNS   : -38.618
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.174
-TNS   : -176.609
+TNS   : -176.491
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_and_mem_clock:inst|clock_out'
 Slack : -2.174
-TNS   : -101.594
+TNS   : -102.612
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]'
-Slack : 0.142
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]'
+Slack : 0.013
 TNS   : 0.000
 
 ------------------------------------------------------------

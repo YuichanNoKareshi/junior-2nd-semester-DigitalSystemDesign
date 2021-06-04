@@ -48,7 +48,7 @@ module pipeid (mwreg,mrn,ern,ewreg,em2reg,mm2reg,dpc4,inst,
 	assign jpc = {dpc4[31:28],inst[25:0],2'b00};
 	
 	//output:pcsource
-	assign pcsource = pcsource;
+	// assign pcsource = pcsource;
 	
 	//wire:rsrtequ = (da == db)
 	assign rsrtequ = ~|(da^db);

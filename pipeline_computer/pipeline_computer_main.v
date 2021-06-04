@@ -5,14 +5,14 @@
 /////////////////////////////////////////////////////////////
 
 module pipeline_computer_main (resetn,clock,mem_clock, pc,inst,ealu,malu,walu,
-	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,mem_dataout,io_read_data);
+	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,add_model,mem_dataout,io_read_data);
 		
 	input [31:0] in_port0,in_port1;
 	output [31:0] out_port0,out_port1,out_port2;
 	output [31:0] mem_dataout;
 	output [31:0] io_read_data;	
 	
-	input resetn, clock, mem_clock,and_model;
+	input resetn, clock, mem_clock,and_model,add_model;
 	output [31:0] pc,inst,ealu,malu,walu;
 	wire [31:0] bpc,jpc,npc,pc4,ins, inst;
 	wire [31:0] dpc4,da,db,dimm;
@@ -51,7 +51,7 @@ module pipeline_computer_main (resetn,clock,mem_clock, pc,inst,ealu,malu,walu,
 	pipeemreg em_reg ( ewreg,em2reg,ewmem,ealu,eb,ern,clock,resetn,mwreg,mm2reg,mwmem,malu,mb,mrn); // EXE/MEM 流水线寄存器
 
 	pipemem mem_stage ( mwmem,malu,mb,clock,mem_clock,mmo, 
-	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,mem_dataout,io_read_data); // MEM stage
+	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,add_model,mem_dataout,io_read_data); // MEM stage
 
 	pipemwreg mw_reg ( mwreg,mm2reg,mmo,malu,mrn,clock,resetn,wwreg,wm2reg,wmo,walu,wrn); // MEM/WB 流水线寄存器
 

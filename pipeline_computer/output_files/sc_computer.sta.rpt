@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for sc_computer
-Thu Jun 03 20:38:27 2021
+Fri Jun 04 18:05:00 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -123,18 +123,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 ; clk                                                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                                   ;
 ; clock_and_mem_clock:inst|clock_out                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock_and_mem_clock:inst|clock_out }                    ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] } ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] } ;
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                          ;
-+------------+-----------------+-------------------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
-+------------+-----------------+-------------------------------------------------------+------+
-; 62.83 MHz  ; 62.83 MHz       ; clock_and_mem_clock:inst|clock_out                    ;      ;
-; 305.81 MHz ; 305.81 MHz      ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;      ;
-+------------+-----------------+-------------------------------------------------------+------+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                             ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note                    ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
+; 61.38 MHz  ; 61.38 MHz       ; clock_and_mem_clock:inst|clock_out                    ;                         ;
+; 712.25 MHz ; 288.35 MHz      ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; limit due to hold check ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -149,9 +149,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------+---------+---------------+
 ; Clock                                                 ; Slack   ; End Point TNS ;
 +-------------------------------------------------------+---------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -13.346 ; -6504.410     ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -6.864  ; -28.964       ;
-; clk                                                   ; -3.655  ; -461.132      ;
+; clock_and_mem_clock:inst|clock_out                    ; -13.011 ; -6496.630     ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -6.428  ; -31.144       ;
+; clk                                                   ; -4.442  ; -561.199      ;
 +-------------------------------------------------------+---------+---------------+
 
 
@@ -160,9 +160,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -4.192 ; -87.766       ;
-; clk                                                   ; -1.355 ; -90.228       ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -1.203 ; -5.287        ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.470 ; -107.140      ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.588 ; -5.907        ;
+; clk                                                   ; -0.938 ; -60.794       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -183,9 +183,9 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -981.878      ;
-; clk                                                   ; -2.174 ; -222.701      ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0.046  ; 0.000         ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -1009.610     ;
+; clk                                                   ; -2.174 ; -223.067      ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.071 ; -0.187        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -194,17 +194,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; 1.654 ; 2.217 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; 1.535 ; 2.123 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; 1.523 ; 1.971 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; 1.441 ; 1.853 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; 1.695 ; 2.304 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; 1.580 ; 2.148 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; 1.827 ; 2.549 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; 1.364 ; 1.773 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; 1.968 ; 2.761 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; 1.729 ; 2.424 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 4.956 ; 5.811 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; 1.517 ; 2.179 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; 1.301 ; 1.922 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; 1.536 ; 2.185 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; 1.678 ; 2.310 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; 1.673 ; 2.358 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 1.083 ; 1.573 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; 1.476 ; 1.978 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; 1.562 ; 2.254 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; 1.618 ; 2.407 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; 1.203 ; 1.678 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 2.891 ; 3.537 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 3.934 ; 4.783 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 
 
@@ -213,17 +214,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; -0.769 ; -1.259 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; -0.656 ; -1.125 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; -0.650 ; -1.041 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; -0.592 ; -0.958 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; -0.782 ; -1.257 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; -0.689 ; -1.170 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; -0.869 ; -1.409 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; -0.518 ; -0.874 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; -1.004 ; -1.605 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; -0.781 ; -1.292 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -1.750 ; -2.431 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; -0.609 ; -1.143 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; -0.437 ; -0.971 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; -0.637 ; -1.161 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; -0.749 ; -1.230 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; -0.755 ; -1.275 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; -0.235 ; -0.644 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; -0.611 ; -1.046 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; -0.655 ; -1.195 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; -0.667 ; -1.286 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; -0.341 ; -0.723 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.878 ; -1.398 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.744 ; -2.508 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 
 
@@ -232,54 +234,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 69.384 ; 69.525 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 68.764 ; 69.259 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 68.174 ; 68.827 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 68.219 ; 68.470 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 68.964 ; 69.525 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 67.584 ; 68.668 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 68.263 ; 68.590 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 69.384 ; 68.872 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 74.025 ; 74.584 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 73.657 ; 74.584 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 73.312 ; 74.412 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 72.202 ; 72.861 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 72.025 ; 72.438 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 72.739 ; 73.462 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 72.053 ; 72.596 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 74.025 ; 73.256 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 65.306 ; 65.825 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 65.306 ; 65.803 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 64.870 ; 65.262 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 65.189 ; 65.825 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 64.800 ; 65.058 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 64.525 ; 64.700 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 65.159 ; 65.632 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 64.582 ; 64.479 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 79.183 ; 79.876 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 78.556 ; 79.003 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 78.457 ; 78.898 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 78.800 ; 79.245 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 79.183 ; 79.876 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 78.324 ; 78.711 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 78.647 ; 79.020 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 79.153 ; 78.713 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 68.958 ; 69.590 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 68.816 ; 69.459 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 68.149 ; 68.287 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 68.096 ; 68.126 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 68.958 ; 69.590 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 68.543 ; 69.087 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 68.139 ; 68.698 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 68.536 ; 68.236 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 74.929 ; 75.522 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 74.420 ; 74.877 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 73.968 ; 74.385 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 74.099 ; 74.375 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 73.947 ; 74.186 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 74.840 ; 75.522 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 73.965 ; 74.251 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 74.929 ; 74.618 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 66.707 ; 68.020 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 66.707 ; 67.875 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 65.103 ; 65.905 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 66.701 ; 68.020 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 66.678 ; 67.731 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 66.281 ; 67.910 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 66.219 ; 67.050 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 66.459 ; 65.840 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 76.713 ; 77.371 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 75.941 ; 76.819 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 76.159 ; 77.371 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 75.353 ; 76.082 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 75.440 ; 76.388 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 75.498 ; 76.399 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 75.179 ; 76.149 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 76.713 ; 75.835 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 69.506 ; 70.054 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 68.578 ; 69.542 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 67.536 ; 67.779 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 68.015 ; 68.741 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 68.829 ; 70.054 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 67.864 ; 68.542 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 68.773 ; 69.964 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 69.506 ; 68.395 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 77.544 ; 77.029 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 76.147 ; 77.029 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 75.263 ; 75.427 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 75.576 ; 75.724 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 75.554 ; 75.736 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 75.290 ; 75.493 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 75.920 ; 76.389 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 77.544 ; 76.557 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 67.076 ; 67.993 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 65.629 ; 65.895 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 65.583 ; 65.954 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 66.004 ; 66.842 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 67.076 ; 67.993 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 66.125 ; 66.806 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 65.251 ; 65.482 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 66.349 ; 65.846 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 75.248 ; 76.347 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 74.558 ; 75.218 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 73.764 ; 74.086 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 74.027 ; 74.659 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 74.272 ; 74.873 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 75.248 ; 76.347 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 74.293 ; 74.880 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 74.408 ; 74.211 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -288,54 +290,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 9.896  ; 10.169 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 10.399 ; 10.853 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 10.289 ; 10.685 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 9.896  ; 10.169 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 10.727 ; 11.251 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 9.988  ; 10.347 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 10.118 ; 10.679 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 10.974 ; 10.501 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 11.429 ; 11.785 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 12.611 ; 13.402 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 12.711 ; 13.473 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 11.839 ; 11.955 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 11.601 ; 11.871 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 11.868 ; 12.547 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 11.429 ; 11.785 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 12.947 ; 12.554 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 9.448  ; 9.430  ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 10.175 ; 10.582 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 9.504  ; 9.767  ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 9.988  ; 10.392 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 9.499  ; 9.710  ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 9.448  ; 9.605  ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 9.730  ; 10.170 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 9.492  ; 9.430  ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 10.972 ; 11.184 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 11.055 ; 11.398 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 11.026 ; 11.375 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 11.329 ; 11.697 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 11.688 ; 12.264 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 10.972 ; 11.184 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 11.336 ; 11.589 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 11.745 ; 11.299 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 10.210 ; 10.248 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 10.594 ; 11.060 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 10.210 ; 10.324 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 10.260 ; 10.248 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 10.906 ; 11.400 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 10.578 ; 11.333 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 10.430 ; 11.031 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 10.509 ; 10.335 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 11.240 ; 11.386 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 11.844 ; 12.197 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 11.464 ; 11.666 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 11.387 ; 11.601 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 11.240 ; 11.386 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 12.116 ; 12.695 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 11.409 ; 11.509 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 12.064 ; 11.878 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 10.779 ; 11.148 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 11.845 ; 12.652 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 10.779 ; 11.148 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 11.917 ; 12.686 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 11.829 ; 12.586 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 11.741 ; 12.613 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 11.414 ; 12.537 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 11.658 ; 11.270 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 12.755 ; 13.184 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 13.299 ; 13.962 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 13.464 ; 14.388 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 12.755 ; 13.361 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 12.818 ; 13.501 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 13.099 ; 13.493 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 12.763 ; 13.265 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 13.894 ; 13.184 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 9.989  ; 10.198 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 11.264 ; 11.978 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 9.989  ; 10.198 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 10.474 ; 10.828 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 11.019 ; 11.838 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 10.231 ; 10.769 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 10.952 ; 11.813 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 11.293 ; 10.712 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 11.673 ; 11.812 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 12.391 ; 12.946 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 11.673 ; 11.838 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 11.950 ; 12.294 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 11.949 ; 12.087 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 11.889 ; 11.812 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 12.446 ; 12.578 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 13.616 ; 12.717 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 10.681 ; 11.138 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 10.929 ; 11.167 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 10.887 ; 11.138 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 11.462 ; 11.972 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 12.219 ; 12.986 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 11.346 ; 12.115 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 10.681 ; 11.285 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 11.343 ; 11.153 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 11.974 ; 12.132 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 12.501 ; 12.923 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 11.974 ; 12.132 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 12.320 ; 12.413 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 12.250 ; 12.650 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 13.238 ; 13.985 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 12.531 ; 12.645 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 12.437 ; 12.280 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -345,14 +347,14 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                           ;
-+------------+-----------------+-------------------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
-+------------+-----------------+-------------------------------------------------------+------+
-; 63.72 MHz  ; 63.72 MHz       ; clock_and_mem_clock:inst|clock_out                    ;      ;
-; 301.39 MHz ; 301.39 MHz      ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;      ;
-+------------+-----------------+-------------------------------------------------------+------+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                              ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note                    ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
+; 61.17 MHz  ; 61.17 MHz       ; clock_and_mem_clock:inst|clock_out                    ;                         ;
+; 677.51 MHz ; 287.52 MHz      ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; limit due to hold check ;
++------------+-----------------+-------------------------------------------------------+-------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -361,9 +363,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+---------+---------------+
 ; Clock                                                 ; Slack   ; End Point TNS ;
 +-------------------------------------------------------+---------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -13.295 ; -6528.827     ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -6.824  ; -28.800       ;
-; clk                                                   ; -3.442  ; -432.801      ;
+; clock_and_mem_clock:inst|clock_out                    ; -12.982 ; -6463.039     ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -6.314  ; -30.649       ;
+; clk                                                   ; -4.178  ; -525.691      ;
 +-------------------------------------------------------+---------+---------------+
 
 
@@ -372,9 +374,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -4.181 ; -85.745       ;
-; clk                                                   ; -1.576 ; -109.379      ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -1.128 ; -5.064        ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.387 ; -99.536       ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.554 ; -5.841        ;
+; clk                                                   ; -0.965 ; -72.546       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -395,9 +397,9 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -1054.439     ;
-; clk                                                   ; -2.174 ; -226.306      ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0.012  ; 0.000         ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -1023.122     ;
+; clk                                                   ; -2.174 ; -227.157      ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.081 ; -0.218        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -406,17 +408,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; 1.439 ; 2.083 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; 1.336 ; 1.959 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; 1.249 ; 1.782 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; 1.165 ; 1.650 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; 1.484 ; 2.160 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; 1.299 ; 1.942 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; 1.593 ; 2.381 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; 1.102 ; 1.578 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; 1.766 ; 2.617 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; 1.491 ; 2.249 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 4.902 ; 5.766 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; 1.301 ; 2.032 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; 1.113 ; 1.754 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; 1.272 ; 1.980 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; 1.415 ; 2.120 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; 1.433 ; 2.190 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 0.821 ; 1.357 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; 1.182 ; 1.759 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; 1.348 ; 2.091 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; 1.406 ; 2.245 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; 0.957 ; 1.499 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 2.679 ; 3.339 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 3.830 ; 4.645 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 
 
@@ -425,17 +428,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; -0.569 ; -1.110 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; -0.476 ; -0.977 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; -0.401 ; -0.842 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; -0.340 ; -0.752 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; -0.588 ; -1.102 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; -0.431 ; -0.964 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; -0.654 ; -1.270 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; -0.282 ; -0.671 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; -0.816 ; -1.464 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; -0.563 ; -1.118 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -1.725 ; -2.395 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; -0.412 ; -0.983 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; -0.266 ; -0.782 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; -0.391 ; -0.936 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; -0.504 ; -1.027 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; -0.535 ; -1.090 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 0.003  ; -0.416 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; -0.339 ; -0.805 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; -0.459 ; -1.028 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; -0.473 ; -1.121 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; -0.117 ; -0.537 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.659 ; -1.158 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.623 ; -2.338 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 
 
@@ -444,54 +448,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 71.871 ; 72.037 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 71.210 ; 71.779 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 70.651 ; 71.344 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 70.610 ; 70.939 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 71.402 ; 72.037 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 70.035 ; 71.189 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 70.717 ; 71.100 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 71.871 ; 71.291 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 76.725 ; 77.304 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 76.329 ; 77.304 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 75.985 ; 77.145 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 74.723 ; 75.521 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 74.555 ; 75.100 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 75.358 ; 76.151 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 74.615 ; 75.264 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 76.725 ; 75.881 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 67.951 ; 68.566 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 67.951 ; 68.524 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 67.516 ; 67.989 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 67.874 ; 68.566 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 67.422 ; 67.755 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 67.145 ; 67.396 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 67.804 ; 68.354 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 67.272 ; 67.085 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 81.754 ; 82.490 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 81.119 ; 81.585 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 81.021 ; 81.488 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 81.261 ; 81.756 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 81.754 ; 82.490 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 80.843 ; 81.292 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 81.168 ; 81.595 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 81.722 ; 81.246 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 71.525 ; 72.199 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 71.370 ; 72.042 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 70.633 ; 70.813 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 70.563 ; 70.654 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 71.525 ; 72.199 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 71.105 ; 71.687 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 70.663 ; 71.262 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 71.131 ; 70.803 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 77.504 ; 78.145 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 77.011 ; 77.494 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 76.451 ; 76.989 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 76.678 ; 76.977 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 76.536 ; 76.802 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 77.382 ; 78.145 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 76.494 ; 76.873 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 77.504 ; 77.097 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 69.321 ; 70.712 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 69.252 ; 70.548 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 67.553 ; 68.490 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 69.321 ; 70.712 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 69.204 ; 70.388 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 68.874 ; 70.605 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 68.752 ; 69.702 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 69.016 ; 68.320 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 79.289 ; 79.934 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 78.402 ; 79.373 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 78.649 ; 79.934 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 77.846 ; 78.627 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 77.943 ; 78.949 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 77.967 ; 78.945 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 77.653 ; 78.691 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 79.289 ; 78.311 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 72.330 ; 72.896 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 71.228 ; 72.349 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 70.141 ; 70.446 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 70.718 ; 71.527 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 71.586 ; 72.896 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 70.571 ; 71.301 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 71.512 ; 72.782 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 72.330 ; 71.137 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 80.009 ; 79.514 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 78.600 ; 79.514 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 77.584 ; 77.820 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 77.806 ; 78.026 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 77.782 ; 78.040 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 77.601 ; 77.891 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 78.283 ; 78.819 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 80.009 ; 78.984 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 69.792 ; 70.758 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 68.196 ; 68.508 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 68.176 ; 68.607 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 68.695 ; 69.566 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 69.792 ; 70.758 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 68.799 ; 69.532 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 67.767 ; 68.112 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 69.031 ; 68.490 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 77.755 ; 78.908 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 77.044 ; 77.740 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 76.153 ; 76.556 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 76.520 ; 77.183 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 76.763 ; 77.406 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 77.755 ; 78.908 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 76.790 ; 77.406 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 76.817 ; 76.524 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -500,54 +504,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 9.659  ; 10.049 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 10.214 ; 10.765 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 10.158 ; 10.602 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 9.659  ; 10.049 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 10.578 ; 11.169 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 9.820  ; 10.242 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 9.982  ; 10.608 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 10.837 ; 10.289 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 11.299 ; 11.732 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 12.548 ; 13.399 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 12.703 ; 13.507 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 11.700 ; 11.917 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 11.508 ; 11.853 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 11.770 ; 12.512 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 11.299 ; 11.732 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 12.942 ; 12.480 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 9.285  ; 9.253  ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 10.036 ; 10.533 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 9.380  ; 9.735  ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 9.877  ; 10.401 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 9.353  ; 9.657  ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 9.285  ; 9.518  ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 9.608  ; 10.106 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 9.436  ; 9.253  ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 10.891 ; 11.140 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 10.969 ; 11.352 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 10.947 ; 11.324 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 11.159 ; 11.611 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 11.612 ; 12.222 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 10.891 ; 11.140 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 11.266 ; 11.530 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 11.709 ; 11.193 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 10.057 ; 10.135 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 10.476 ; 10.979 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 10.057 ; 10.215 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 10.100 ; 10.135 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 10.827 ; 11.356 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 10.488 ; 11.310 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 10.324 ; 10.988 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 10.460 ; 10.265 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 11.146 ; 11.330 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 11.759 ; 12.160 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 11.361 ; 11.623 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 11.288 ; 11.537 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 11.146 ; 11.330 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 11.988 ; 12.663 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 11.308 ; 11.475 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 11.971 ; 11.690 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 10.509 ; 10.970 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 11.650 ; 12.578 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 10.509 ; 10.970 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 11.842 ; 12.641 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 11.615 ; 12.493 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 11.579 ; 12.657 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 11.213 ; 12.511 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 11.475 ; 11.075 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 12.688 ; 13.161 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 13.267 ; 14.032 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 13.463 ; 14.468 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 12.751 ; 13.406 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 12.827 ; 13.565 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 13.103 ; 13.563 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 12.688 ; 13.320 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 13.956 ; 13.161 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 9.774  ; 10.089 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 11.201 ; 12.002 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 9.774  ; 10.089 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 10.343 ; 10.814 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 10.935 ; 11.868 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 10.106 ; 10.749 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 10.851 ; 11.825 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 11.313 ; 10.619 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 11.547 ; 11.772 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 12.362 ; 12.963 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 11.547 ; 11.780 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 11.744 ; 12.171 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 11.736 ; 11.940 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 11.773 ; 11.772 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 12.373 ; 12.562 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 13.657 ; 12.685 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 10.475 ; 10.986 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 10.716 ; 10.986 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 10.704 ; 11.021 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 11.373 ; 11.905 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 12.140 ; 12.952 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 11.230 ; 12.098 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 10.475 ; 11.159 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 11.236 ; 11.031 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 11.829 ; 12.076 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 12.450 ; 12.918 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 11.829 ; 12.085 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 12.271 ; 12.411 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 12.201 ; 12.654 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 13.197 ; 13.998 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 12.482 ; 12.636 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 12.315 ; 12.076 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -562,9 +566,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -7.920 ; -3874.527     ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -3.612 ; -14.480       ;
-; clk                                                   ; -1.771 ; -221.566      ;
+; clock_and_mem_clock:inst|clock_out                    ; -8.066 ; -3828.640     ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -3.184 ; -15.300       ;
+; clk                                                   ; -2.236 ; -276.160      ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -573,9 +577,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -2.342 ; -50.045       ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -0.807 ; -3.666        ;
-; clk                                                   ; -0.696 ; -49.886       ;
+; clock_and_mem_clock:inst|clock_out                    ; -1.379 ; -60.563       ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.140 ; -4.248        ;
+; clk                                                   ; -0.466 ; -26.986       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -596,9 +600,9 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clk                                                   ; -2.174 ; -176.847      ;
-; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -101.594      ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0.099  ; 0.000         ;
+; clk                                                   ; -2.174 ; -176.630      ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -102.749      ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.074 ; -0.150        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -607,17 +611,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; 1.053 ; 1.911 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; 0.933 ; 1.776 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; 0.883 ; 1.633 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; 0.818 ; 1.536 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; 1.078 ; 1.949 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; 0.974 ; 1.808 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; 1.184 ; 2.148 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; 0.767 ; 1.449 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; 1.298 ; 2.325 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; 1.077 ; 2.008 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 2.749 ; 3.739 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; 0.993 ; 1.894 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; 0.801 ; 1.619 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; 0.945 ; 1.821 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; 1.064 ; 1.961 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; 1.012 ; 1.907 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 0.645 ; 1.368 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; 0.863 ; 1.632 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; 0.999 ; 1.899 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; 1.048 ; 2.040 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; 0.702 ; 1.440 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 1.233 ; 2.018 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 1.864 ; 2.849 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 
 
@@ -626,17 +631,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; -0.594 ; -1.386 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; -0.480 ; -1.225 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; -0.440 ; -1.135 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; -0.389 ; -1.065 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; -0.597 ; -1.355 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; -0.511 ; -1.267 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; -0.675 ; -1.486 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; -0.345 ; -0.985 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; -0.781 ; -1.649 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; -0.580 ; -1.363 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -0.883 ; -1.728 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; -0.518 ; -1.312 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; -0.353 ; -1.102 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; -0.479 ; -1.256 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; -0.573 ; -1.347 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; -0.535 ; -1.302 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; -0.213 ; -0.873 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; -0.425 ; -1.138 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; -0.526 ; -1.308 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; -0.542 ; -1.396 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; -0.263 ; -0.925 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.186 ; -0.894 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.724 ; -1.630 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 
 
@@ -645,54 +651,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 39.382 ; 39.594 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 38.797 ; 39.310 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 38.408 ; 39.072 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 38.381 ; 38.669 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 39.009 ; 39.594 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 37.844 ; 38.902 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 38.541 ; 38.904 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 39.382 ; 38.872 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 43.074 ; 43.499 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 42.609 ; 43.499 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 42.462 ; 43.454 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 41.551 ; 42.161 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 41.500 ; 41.931 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 41.991 ; 42.648 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 41.528 ; 42.015 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 43.074 ; 42.322 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 35.818 ; 36.446 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 35.818 ; 36.373 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 35.527 ; 35.971 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 35.794 ; 36.446 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 35.423 ; 35.795 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 35.207 ; 35.494 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 35.723 ; 36.263 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 35.451 ; 35.235 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 47.453 ; 48.009 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 46.839 ; 47.329 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 46.798 ; 47.273 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 46.929 ; 47.432 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 47.321 ; 48.009 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 46.640 ; 47.104 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 46.892 ; 47.334 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 47.453 ; 46.927 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 39.223 ; 39.843 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 39.079 ; 39.714 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 38.560 ; 38.785 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 38.529 ; 38.658 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 39.223 ; 39.843 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 38.921 ; 39.455 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 38.600 ; 39.144 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 39.063 ; 38.704 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 44.081 ; 44.589 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 43.662 ; 44.114 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 43.338 ; 43.733 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 43.431 ; 43.787 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 43.329 ; 43.609 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 43.900 ; 44.589 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 43.375 ; 43.667 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 44.081 ; 43.718 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 36.891 ; 38.112 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 36.846 ; 37.941 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 35.677 ; 36.376 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 36.891 ; 38.112 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 36.816 ; 37.832 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 36.671 ; 38.031 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 36.527 ; 37.333 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 36.787 ; 36.154 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 45.492 ; 45.999 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 44.655 ; 45.527 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 44.853 ; 45.999 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 44.284 ; 45.004 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 44.357 ; 45.278 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 44.329 ; 45.210 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 44.089 ; 45.047 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 45.492 ; 44.622 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 39.699 ; 40.071 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 38.806 ; 39.731 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 37.894 ; 38.258 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 38.332 ; 39.084 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 38.923 ; 40.071 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 38.198 ; 38.919 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 38.874 ; 40.005 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 39.699 ; 38.623 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 47.130 ; 46.766 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 45.875 ; 46.766 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 45.161 ; 45.479 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 45.276 ; 45.584 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 45.282 ; 45.577 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 45.175 ; 45.509 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 45.687 ; 46.212 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 47.130 ; 46.158 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 37.316 ; 38.225 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 36.198 ; 36.549 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 36.192 ; 36.661 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 36.624 ; 37.381 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 37.316 ; 38.225 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 36.650 ; 37.335 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 35.979 ; 36.268 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 36.976 ; 36.453 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 44.633 ; 45.721 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 44.202 ; 44.884 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 43.586 ; 43.956 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 43.896 ; 44.473 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 44.007 ; 44.601 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 44.633 ; 45.721 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 44.003 ; 44.615 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 44.084 ; 43.792 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -701,54 +707,54 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clk        ; 5.982 ; 6.347 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 6.365 ; 6.816 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 6.246 ; 6.654 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 5.982 ; 6.347 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 6.538 ; 7.075 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 6.118 ; 6.455 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 6.131 ; 6.736 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 6.883 ; 6.438 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 6.978 ; 7.359 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 7.806 ; 8.545 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 7.877 ; 8.633 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 7.200 ; 7.400 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 7.036 ; 7.359 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 7.254 ; 7.886 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 6.978 ; 7.371 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 8.171 ; 7.749 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 5.584 ; 5.614 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 6.138 ; 6.614 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 5.734 ; 6.063 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 6.072 ; 6.508 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 5.699 ; 5.997 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 5.584 ; 5.827 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 5.898 ; 6.450 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 5.778 ; 5.614 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 6.574 ; 6.835 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 6.683 ; 7.071 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 6.689 ; 7.055 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 6.799 ; 7.191 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 7.163 ; 7.735 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 6.574 ; 6.864 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 6.932 ; 7.194 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 7.310 ; 6.835 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 6.152 ; 6.285 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 6.564 ; 7.061 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 6.152 ; 6.352 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 6.226 ; 6.285 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 6.733 ; 7.236 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 6.494 ; 7.098 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 6.349 ; 6.869 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 6.568 ; 6.346 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 6.784 ; 6.978 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 7.175 ; 7.533 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 6.952 ; 7.210 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 6.884 ; 7.139 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 6.784 ; 6.978 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 7.356 ; 8.001 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 6.907 ; 7.165 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 7.390 ; 7.139 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 6.517 ; 6.859 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 7.343 ; 8.148 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 6.517 ; 6.952 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 7.452 ; 8.229 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 7.332 ; 8.112 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 7.336 ; 8.182 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 7.064 ; 8.102 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 7.315 ; 6.859 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 7.848 ; 8.219 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 8.263 ; 8.967 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 8.426 ; 9.335 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 7.915 ; 8.484 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 7.978 ; 8.682 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 8.071 ; 8.600 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 7.848 ; 8.452 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 8.903 ; 8.219 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 6.042 ; 6.328 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 6.971 ; 7.709 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 6.042 ; 6.328 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 6.538 ; 6.903 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 6.866 ; 7.691 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 6.268 ; 6.918 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 6.825 ; 7.757 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 7.298 ; 6.745 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 7.040 ; 7.273 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 7.628 ; 8.226 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 7.040 ; 7.314 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 7.141 ; 7.517 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 7.165 ; 7.413 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 7.152 ; 7.273 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 7.610 ; 7.905 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 8.685 ; 7.861 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 6.544 ; 6.824 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 6.702 ; 7.023 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 6.718 ; 7.064 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 7.078 ; 7.756 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 7.604 ; 8.381 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 7.107 ; 7.641 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 6.544 ; 6.996 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 7.212 ; 6.824 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 7.274 ; 7.334 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 7.721 ; 8.186 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 7.274 ; 7.572 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 7.448 ; 7.815 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 7.528 ; 7.948 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 8.180 ; 9.035 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 7.523 ; 7.954 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 7.639 ; 7.334 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -763,9 +769,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -7.281 ; -3578.160     ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -3.491 ; -14.139       ;
-; clk                                                   ; -1.617 ; -201.880      ;
+; clock_and_mem_clock:inst|clock_out                    ; -7.488 ; -3512.136     ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -3.068 ; -14.698       ;
+; clk                                                   ; -2.031 ; -249.187      ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -774,9 +780,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clock_and_mem_clock:inst|clock_out                    ; -2.338 ; -53.003       ;
-; clk                                                   ; -0.860 ; -65.757       ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -0.700 ; -3.270        ;
+; clock_and_mem_clock:inst|clock_out                    ; -1.393 ; -60.238       ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -1.054 ; -3.893        ;
+; clk                                                   ; -0.559 ; -38.618       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -797,9 +803,9 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; clk                                                   ; -2.174 ; -176.609      ;
-; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -101.594      ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0.142  ; 0.000         ;
+; clk                                                   ; -2.174 ; -176.491      ;
+; clock_and_mem_clock:inst|clock_out                    ; -2.174 ; -102.612      ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0.013  ; 0.000         ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -808,17 +814,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; 0.915 ; 1.759 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; 0.801 ; 1.618 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; 0.740 ; 1.498 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; 0.661 ; 1.392 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; 0.944 ; 1.797 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; 0.798 ; 1.626 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; 1.062 ; 1.994 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; 0.606 ; 1.308 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; 1.156 ; 2.138 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; 0.925 ; 1.824 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 2.624 ; 3.568 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; 0.866 ; 1.737 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; 0.677 ; 1.472 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; 0.807 ; 1.661 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; 0.924 ; 1.798 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; 0.860 ; 1.734 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 0.493 ; 1.216 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; 0.703 ; 1.475 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; 0.875 ; 1.747 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; 0.918 ; 1.866 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; 0.557 ; 1.296 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 1.115 ; 1.891 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 1.775 ; 2.696 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 
 
@@ -827,17 +834,18 @@ No paths to report.
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; -0.476 ; -1.246 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; -0.364 ; -1.098 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; -0.316 ; -1.008 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; -0.254 ; -0.933 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; -0.481 ; -1.220 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; -0.358 ; -1.107 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; -0.569 ; -1.379 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; -0.203 ; -0.849 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; -0.658 ; -1.499 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; -0.448 ; -1.209 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -0.897 ; -1.713 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; -0.409 ; -1.169 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; -0.248 ; -0.960 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; -0.361 ; -1.107 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; -0.454 ; -1.202 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; -0.402 ; -1.146 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; -0.080 ; -0.726 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; -0.286 ; -0.987 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; -0.421 ; -1.176 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; -0.433 ; -1.250 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; -0.136 ; -0.793 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.143 ; -0.829 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.711 ; -1.555 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 
 
@@ -846,54 +854,54 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 37.443 ; 37.690 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 36.997 ; 37.409 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 36.644 ; 37.207 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 36.544 ; 36.784 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 37.220 ; 37.690 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 36.149 ; 37.029 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 36.774 ; 37.055 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 37.443 ; 37.027 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 40.856 ; 41.277 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 40.547 ; 41.277 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 40.417 ; 41.240 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 39.476 ; 40.006 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 39.421 ; 39.783 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 39.932 ; 40.479 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 39.451 ; 39.874 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 40.856 ; 40.238 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 34.252 ; 34.776 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 34.204 ; 34.684 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 33.973 ; 34.331 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 34.252 ; 34.776 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 33.859 ; 34.158 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 33.646 ; 33.877 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 34.152 ; 34.592 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 33.830 ; 33.653 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 44.910 ; 45.446 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 44.390 ; 44.800 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 44.370 ; 44.754 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 44.410 ; 44.856 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 44.869 ; 45.446 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 44.237 ; 44.603 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 44.427 ; 44.796 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 44.910 ; 44.456 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 37.366 ; 37.885 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 37.203 ; 37.750 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 36.655 ; 36.867 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 36.626 ; 36.743 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 37.366 ; 37.885 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 37.067 ; 37.524 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 36.734 ; 37.221 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 37.153 ; 36.857 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 41.831 ; 42.309 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 41.490 ; 41.876 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 41.179 ; 41.510 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 41.271 ; 41.549 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 41.176 ; 41.406 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 41.736 ; 42.309 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 41.198 ; 41.469 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 41.831 ; 41.518 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 35.320 ; 36.337 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 35.253 ; 36.177 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 34.068 ; 34.689 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 35.320 ; 36.337 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 35.202 ; 36.066 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 35.106 ; 36.264 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 34.925 ; 35.611 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 35.042 ; 34.484 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 43.080 ; 43.552 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 42.398 ; 43.113 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 42.600 ; 43.552 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 42.051 ; 42.635 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 42.127 ; 42.881 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 42.101 ; 42.822 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 41.850 ; 42.656 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 43.080 ; 42.360 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 37.823 ; 38.182 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 37.025 ; 37.839 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 36.125 ; 36.432 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 36.601 ; 37.229 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 37.218 ; 38.182 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 36.492 ; 37.091 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 37.162 ; 38.105 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 37.823 ; 36.924 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 44.551 ; 44.213 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 43.455 ; 44.213 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 42.705 ; 42.980 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 42.736 ; 43.036 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 42.746 ; 43.035 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 42.754 ; 43.026 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 43.236 ; 43.689 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 44.551 ; 43.730 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 35.667 ; 36.440 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 34.491 ; 34.819 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 34.526 ; 34.954 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 35.007 ; 35.644 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 35.667 ; 36.440 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 35.032 ; 35.607 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 34.285 ; 34.582 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 35.256 ; 34.804 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 42.354 ; 43.250 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 41.888 ; 42.465 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 41.240 ; 41.577 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 41.594 ; 42.087 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 41.698 ; 42.197 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 42.354 ; 43.250 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 41.691 ; 42.218 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 41.668 ; 41.412 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -902,54 +910,54 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clk        ; 5.635 ; 6.000 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 6.052 ; 6.417 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 5.955 ; 6.269 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 5.635 ; 6.000 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 6.235 ; 6.660 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 5.809 ; 6.076 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 5.846 ; 6.343 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 6.446 ; 6.082 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 6.639 ; 6.957 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 7.484 ; 8.085 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 7.565 ; 8.170 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 6.843 ; 7.003 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 6.704 ; 6.965 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 6.936 ; 7.454 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 6.639 ; 6.957 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 7.724 ; 7.392 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 5.300 ; 5.315 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 5.821 ; 6.236 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 5.481 ; 5.746 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 5.804 ; 6.172 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 5.429 ; 5.678 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 5.300 ; 5.501 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 5.625 ; 6.070 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 5.473 ; 5.315 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 6.301 ; 6.490 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 6.361 ; 6.695 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 6.377 ; 6.675 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 6.410 ; 6.771 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 6.839 ; 7.308 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 6.301 ; 6.508 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 6.604 ; 6.796 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 6.914 ; 6.490 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 5.804 ; 5.926 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 6.245 ; 6.669 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 5.804 ; 5.993 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 5.889 ; 5.926 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 6.429 ; 6.845 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 6.193 ; 6.750 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 6.029 ; 6.519 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 6.225 ; 6.059 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 6.449 ; 6.608 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 6.829 ; 7.133 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 6.616 ; 6.815 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 6.548 ; 6.757 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 6.449 ; 6.608 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 7.015 ; 7.542 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 6.560 ; 6.794 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 6.976 ; 6.769 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 6.137 ; 6.485 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 6.989 ; 7.669 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 6.137 ; 6.505 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 7.158 ; 7.752 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 6.957 ; 7.623 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 6.995 ; 7.764 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 6.702 ; 7.630 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 6.829 ; 6.485 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 7.520 ; 7.876 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 7.930 ; 8.510 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 8.108 ; 8.856 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 7.602 ; 8.062 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 7.679 ; 8.241 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 7.759 ; 8.180 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 7.520 ; 8.021 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 8.443 ; 7.876 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 5.706 ; 5.962 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 6.648 ; 7.285 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 5.706 ; 5.962 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 6.218 ; 6.532 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 6.607 ; 7.296 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 5.989 ; 6.541 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 6.548 ; 7.335 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 6.923 ; 6.458 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 6.669 ; 6.900 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 7.292 ; 7.800 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 6.669 ; 6.919 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 6.692 ; 7.066 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 6.720 ; 6.961 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 6.816 ; 6.900 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 7.243 ; 7.485 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 8.240 ; 7.518 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 6.160 ; 6.464 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 6.293 ; 6.582 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 6.346 ; 6.663 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 6.739 ; 7.331 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 7.238 ; 7.888 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 6.779 ; 7.220 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 6.160 ; 6.583 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 6.803 ; 6.464 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 6.888 ; 6.898 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 7.350 ; 7.738 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 6.888 ; 7.148 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 7.087 ; 7.393 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 7.162 ; 7.513 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 7.813 ; 8.529 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 7.154 ; 7.520 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 7.162 ; 6.898 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -964,14 +972,14 @@ No synchronizer chains to report.
 +--------------------------------------------------------+-----------+----------+----------+---------+---------------------+
 ; Clock                                                  ; Setup     ; Hold     ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------+-----------+----------+----------+---------+---------------------+
-; Worst-case Slack                                       ; -13.346   ; -4.192   ; N/A      ; N/A     ; -2.174              ;
-;  clk                                                   ; -3.655    ; -1.576   ; N/A      ; N/A     ; -2.174              ;
-;  clock_and_mem_clock:inst|clock_out                    ; -13.346   ; -4.192   ; N/A      ; N/A     ; -2.174              ;
-;  pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -6.864    ; -1.203   ; N/A      ; N/A     ; 0.012               ;
-; Design-wide TNS                                        ; -6994.506 ; -200.188 ; 0.0      ; 0.0     ; -1280.745           ;
-;  clk                                                   ; -461.132  ; -109.379 ; N/A      ; N/A     ; -226.306            ;
-;  clock_and_mem_clock:inst|clock_out                    ; -6528.827 ; -87.766  ; N/A      ; N/A     ; -1054.439           ;
-;  pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -28.964   ; -5.287   ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack                                       ; -13.011   ; -2.470   ; N/A      ; N/A     ; -2.174              ;
+;  clk                                                   ; -4.442    ; -0.965   ; N/A      ; N/A     ; -2.174              ;
+;  clock_and_mem_clock:inst|clock_out                    ; -13.011   ; -2.470   ; N/A      ; N/A     ; -2.174              ;
+;  pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -6.428    ; -1.588   ; N/A      ; N/A     ; -0.081              ;
+; Design-wide TNS                                        ; -7088.973 ; -177.923 ; 0.0      ; 0.0     ; -1250.497           ;
+;  clk                                                   ; -561.199  ; -72.546  ; N/A      ; N/A     ; -227.157            ;
+;  clock_and_mem_clock:inst|clock_out                    ; -6496.630 ; -107.140 ; N/A      ; N/A     ; -1023.122           ;
+;  pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -31.144   ; -5.907   ; N/A      ; N/A     ; -0.218              ;
 +--------------------------------------------------------+-----------+----------+----------+---------+---------------------+
 
 
@@ -980,17 +988,18 @@ No synchronizer chains to report.
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; 1.654 ; 2.217 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; 1.535 ; 2.123 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; 1.523 ; 1.971 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; 1.441 ; 1.853 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; 1.695 ; 2.304 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; 1.580 ; 2.148 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; 1.827 ; 2.549 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; 1.364 ; 1.773 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; 1.968 ; 2.761 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; 1.729 ; 2.424 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 4.956 ; 5.811 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; 1.517 ; 2.179 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; 1.301 ; 1.922 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; 1.536 ; 2.185 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; 1.678 ; 2.310 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; 1.673 ; 2.358 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 1.083 ; 1.573 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; 1.476 ; 1.978 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; 1.562 ; 2.254 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; 1.618 ; 2.407 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; 1.203 ; 1.678 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 2.891 ; 3.537 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 3.934 ; 4.783 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+-------+-------+------------+-------------------------------------------------------+
 
 
@@ -999,17 +1008,18 @@ No synchronizer chains to report.
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 ; Data Port ; Clock Port                                            ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                       ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
-; SW0       ; clk                                                   ; -0.476 ; -1.110 ; Rise       ; clk                                                   ;
-; SW1       ; clk                                                   ; -0.364 ; -0.977 ; Rise       ; clk                                                   ;
-; SW2       ; clk                                                   ; -0.316 ; -0.842 ; Rise       ; clk                                                   ;
-; SW3       ; clk                                                   ; -0.254 ; -0.752 ; Rise       ; clk                                                   ;
-; SW4       ; clk                                                   ; -0.481 ; -1.102 ; Rise       ; clk                                                   ;
-; SW5       ; clk                                                   ; -0.358 ; -0.964 ; Rise       ; clk                                                   ;
-; SW6       ; clk                                                   ; -0.569 ; -1.270 ; Rise       ; clk                                                   ;
-; SW7       ; clk                                                   ; -0.203 ; -0.671 ; Rise       ; clk                                                   ;
-; SW8       ; clk                                                   ; -0.658 ; -1.464 ; Rise       ; clk                                                   ;
-; SW9       ; clk                                                   ; -0.448 ; -1.118 ; Rise       ; clk                                                   ;
-; and_model ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; -0.883 ; -1.713 ; Fall       ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ;
+; SW0       ; clk                                                   ; -0.409 ; -0.983 ; Rise       ; clk                                                   ;
+; SW1       ; clk                                                   ; -0.248 ; -0.782 ; Rise       ; clk                                                   ;
+; SW2       ; clk                                                   ; -0.361 ; -0.936 ; Rise       ; clk                                                   ;
+; SW3       ; clk                                                   ; -0.454 ; -1.027 ; Rise       ; clk                                                   ;
+; SW4       ; clk                                                   ; -0.402 ; -1.090 ; Rise       ; clk                                                   ;
+; SW5       ; clk                                                   ; 0.003  ; -0.416 ; Rise       ; clk                                                   ;
+; SW6       ; clk                                                   ; -0.286 ; -0.805 ; Rise       ; clk                                                   ;
+; SW7       ; clk                                                   ; -0.421 ; -1.028 ; Rise       ; clk                                                   ;
+; SW8       ; clk                                                   ; -0.433 ; -1.121 ; Rise       ; clk                                                   ;
+; SW9       ; clk                                                   ; -0.117 ; -0.537 ; Rise       ; clk                                                   ;
+; add_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.143 ; -0.829 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
+; and_model ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; -0.711 ; -1.555 ; Fall       ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ;
 +-----------+-------------------------------------------------------+--------+--------+------------+-------------------------------------------------------+
 
 
@@ -1018,54 +1028,54 @@ No synchronizer chains to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; HEX0[*]   ; clk        ; 71.871 ; 72.037 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 71.210 ; 71.779 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 70.651 ; 71.344 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 70.610 ; 70.939 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 71.402 ; 72.037 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 70.035 ; 71.189 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 70.717 ; 71.100 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 71.871 ; 71.291 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 76.725 ; 77.304 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 76.329 ; 77.304 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 75.985 ; 77.145 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 74.723 ; 75.521 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 74.555 ; 75.100 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 75.358 ; 76.151 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 74.615 ; 75.264 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 76.725 ; 75.881 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 67.951 ; 68.566 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 67.951 ; 68.524 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 67.516 ; 67.989 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 67.874 ; 68.566 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 67.422 ; 67.755 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 67.145 ; 67.396 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 67.804 ; 68.354 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 67.272 ; 67.085 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 81.754 ; 82.490 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 81.119 ; 81.585 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 81.021 ; 81.488 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 81.261 ; 81.756 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 81.754 ; 82.490 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 80.843 ; 81.292 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 81.168 ; 81.595 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 81.722 ; 81.246 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 71.525 ; 72.199 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 71.370 ; 72.042 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 70.633 ; 70.813 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 70.563 ; 70.654 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 71.525 ; 72.199 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 71.105 ; 71.687 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 70.663 ; 71.262 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 71.131 ; 70.803 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 77.504 ; 78.145 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 77.011 ; 77.494 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 76.451 ; 76.989 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 76.678 ; 76.977 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 76.536 ; 76.802 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 77.382 ; 78.145 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 76.494 ; 76.873 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 77.504 ; 77.097 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 69.321 ; 70.712 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 69.252 ; 70.548 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 67.553 ; 68.490 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 69.321 ; 70.712 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 69.204 ; 70.388 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 68.874 ; 70.605 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 68.752 ; 69.702 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 69.016 ; 68.320 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 79.289 ; 79.934 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 78.402 ; 79.373 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 78.649 ; 79.934 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 77.846 ; 78.627 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 77.943 ; 78.949 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 77.967 ; 78.945 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 77.653 ; 78.691 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 79.289 ; 78.311 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 72.330 ; 72.896 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 71.228 ; 72.349 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 70.141 ; 70.446 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 70.718 ; 71.527 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 71.586 ; 72.896 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 70.571 ; 71.301 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 71.512 ; 72.782 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 72.330 ; 71.137 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 80.009 ; 79.514 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 78.600 ; 79.514 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 77.584 ; 77.820 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 77.806 ; 78.026 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 77.782 ; 78.040 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 77.601 ; 77.891 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 78.283 ; 78.819 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 80.009 ; 78.984 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 69.792 ; 70.758 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 68.196 ; 68.508 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 68.176 ; 68.607 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 68.695 ; 69.566 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 69.792 ; 70.758 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 68.799 ; 69.532 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 67.767 ; 68.112 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 69.031 ; 68.490 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 77.755 ; 78.908 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 77.044 ; 77.740 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 76.153 ; 76.556 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 76.520 ; 77.183 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 76.763 ; 77.406 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 77.755 ; 78.908 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 76.790 ; 77.406 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 76.817 ; 76.524 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1074,54 +1084,54 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; clk        ; 5.635 ; 6.000 ; Rise       ; clk             ;
-;  HEX0[0]  ; clk        ; 6.052 ; 6.417 ; Rise       ; clk             ;
-;  HEX0[1]  ; clk        ; 5.955 ; 6.269 ; Rise       ; clk             ;
-;  HEX0[2]  ; clk        ; 5.635 ; 6.000 ; Rise       ; clk             ;
-;  HEX0[3]  ; clk        ; 6.235 ; 6.660 ; Rise       ; clk             ;
-;  HEX0[4]  ; clk        ; 5.809 ; 6.076 ; Rise       ; clk             ;
-;  HEX0[5]  ; clk        ; 5.846 ; 6.343 ; Rise       ; clk             ;
-;  HEX0[6]  ; clk        ; 6.446 ; 6.082 ; Rise       ; clk             ;
-; HEX1[*]   ; clk        ; 6.639 ; 6.957 ; Rise       ; clk             ;
-;  HEX1[0]  ; clk        ; 7.484 ; 8.085 ; Rise       ; clk             ;
-;  HEX1[1]  ; clk        ; 7.565 ; 8.170 ; Rise       ; clk             ;
-;  HEX1[2]  ; clk        ; 6.843 ; 7.003 ; Rise       ; clk             ;
-;  HEX1[3]  ; clk        ; 6.704 ; 6.965 ; Rise       ; clk             ;
-;  HEX1[4]  ; clk        ; 6.936 ; 7.454 ; Rise       ; clk             ;
-;  HEX1[5]  ; clk        ; 6.639 ; 6.957 ; Rise       ; clk             ;
-;  HEX1[6]  ; clk        ; 7.724 ; 7.392 ; Rise       ; clk             ;
-; HEX2[*]   ; clk        ; 5.300 ; 5.315 ; Rise       ; clk             ;
-;  HEX2[0]  ; clk        ; 5.821 ; 6.236 ; Rise       ; clk             ;
-;  HEX2[1]  ; clk        ; 5.481 ; 5.746 ; Rise       ; clk             ;
-;  HEX2[2]  ; clk        ; 5.804 ; 6.172 ; Rise       ; clk             ;
-;  HEX2[3]  ; clk        ; 5.429 ; 5.678 ; Rise       ; clk             ;
-;  HEX2[4]  ; clk        ; 5.300 ; 5.501 ; Rise       ; clk             ;
-;  HEX2[5]  ; clk        ; 5.625 ; 6.070 ; Rise       ; clk             ;
-;  HEX2[6]  ; clk        ; 5.473 ; 5.315 ; Rise       ; clk             ;
-; HEX3[*]   ; clk        ; 6.301 ; 6.490 ; Rise       ; clk             ;
-;  HEX3[0]  ; clk        ; 6.361 ; 6.695 ; Rise       ; clk             ;
-;  HEX3[1]  ; clk        ; 6.377 ; 6.675 ; Rise       ; clk             ;
-;  HEX3[2]  ; clk        ; 6.410 ; 6.771 ; Rise       ; clk             ;
-;  HEX3[3]  ; clk        ; 6.839 ; 7.308 ; Rise       ; clk             ;
-;  HEX3[4]  ; clk        ; 6.301 ; 6.508 ; Rise       ; clk             ;
-;  HEX3[5]  ; clk        ; 6.604 ; 6.796 ; Rise       ; clk             ;
-;  HEX3[6]  ; clk        ; 6.914 ; 6.490 ; Rise       ; clk             ;
-; HEX4[*]   ; clk        ; 5.804 ; 5.926 ; Rise       ; clk             ;
-;  HEX4[0]  ; clk        ; 6.245 ; 6.669 ; Rise       ; clk             ;
-;  HEX4[1]  ; clk        ; 5.804 ; 5.993 ; Rise       ; clk             ;
-;  HEX4[2]  ; clk        ; 5.889 ; 5.926 ; Rise       ; clk             ;
-;  HEX4[3]  ; clk        ; 6.429 ; 6.845 ; Rise       ; clk             ;
-;  HEX4[4]  ; clk        ; 6.193 ; 6.750 ; Rise       ; clk             ;
-;  HEX4[5]  ; clk        ; 6.029 ; 6.519 ; Rise       ; clk             ;
-;  HEX4[6]  ; clk        ; 6.225 ; 6.059 ; Rise       ; clk             ;
-; HEX5[*]   ; clk        ; 6.449 ; 6.608 ; Rise       ; clk             ;
-;  HEX5[0]  ; clk        ; 6.829 ; 7.133 ; Rise       ; clk             ;
-;  HEX5[1]  ; clk        ; 6.616 ; 6.815 ; Rise       ; clk             ;
-;  HEX5[2]  ; clk        ; 6.548 ; 6.757 ; Rise       ; clk             ;
-;  HEX5[3]  ; clk        ; 6.449 ; 6.608 ; Rise       ; clk             ;
-;  HEX5[4]  ; clk        ; 7.015 ; 7.542 ; Rise       ; clk             ;
-;  HEX5[5]  ; clk        ; 6.560 ; 6.794 ; Rise       ; clk             ;
-;  HEX5[6]  ; clk        ; 6.976 ; 6.769 ; Rise       ; clk             ;
+; HEX0[*]   ; clk        ; 6.137 ; 6.485 ; Rise       ; clk             ;
+;  HEX0[0]  ; clk        ; 6.989 ; 7.669 ; Rise       ; clk             ;
+;  HEX0[1]  ; clk        ; 6.137 ; 6.505 ; Rise       ; clk             ;
+;  HEX0[2]  ; clk        ; 7.158 ; 7.752 ; Rise       ; clk             ;
+;  HEX0[3]  ; clk        ; 6.957 ; 7.623 ; Rise       ; clk             ;
+;  HEX0[4]  ; clk        ; 6.995 ; 7.764 ; Rise       ; clk             ;
+;  HEX0[5]  ; clk        ; 6.702 ; 7.630 ; Rise       ; clk             ;
+;  HEX0[6]  ; clk        ; 6.829 ; 6.485 ; Rise       ; clk             ;
+; HEX1[*]   ; clk        ; 7.520 ; 7.876 ; Rise       ; clk             ;
+;  HEX1[0]  ; clk        ; 7.930 ; 8.510 ; Rise       ; clk             ;
+;  HEX1[1]  ; clk        ; 8.108 ; 8.856 ; Rise       ; clk             ;
+;  HEX1[2]  ; clk        ; 7.602 ; 8.062 ; Rise       ; clk             ;
+;  HEX1[3]  ; clk        ; 7.679 ; 8.241 ; Rise       ; clk             ;
+;  HEX1[4]  ; clk        ; 7.759 ; 8.180 ; Rise       ; clk             ;
+;  HEX1[5]  ; clk        ; 7.520 ; 8.021 ; Rise       ; clk             ;
+;  HEX1[6]  ; clk        ; 8.443 ; 7.876 ; Rise       ; clk             ;
+; HEX2[*]   ; clk        ; 5.706 ; 5.962 ; Rise       ; clk             ;
+;  HEX2[0]  ; clk        ; 6.648 ; 7.285 ; Rise       ; clk             ;
+;  HEX2[1]  ; clk        ; 5.706 ; 5.962 ; Rise       ; clk             ;
+;  HEX2[2]  ; clk        ; 6.218 ; 6.532 ; Rise       ; clk             ;
+;  HEX2[3]  ; clk        ; 6.607 ; 7.296 ; Rise       ; clk             ;
+;  HEX2[4]  ; clk        ; 5.989 ; 6.541 ; Rise       ; clk             ;
+;  HEX2[5]  ; clk        ; 6.548 ; 7.335 ; Rise       ; clk             ;
+;  HEX2[6]  ; clk        ; 6.923 ; 6.458 ; Rise       ; clk             ;
+; HEX3[*]   ; clk        ; 6.669 ; 6.900 ; Rise       ; clk             ;
+;  HEX3[0]  ; clk        ; 7.292 ; 7.800 ; Rise       ; clk             ;
+;  HEX3[1]  ; clk        ; 6.669 ; 6.919 ; Rise       ; clk             ;
+;  HEX3[2]  ; clk        ; 6.692 ; 7.066 ; Rise       ; clk             ;
+;  HEX3[3]  ; clk        ; 6.720 ; 6.961 ; Rise       ; clk             ;
+;  HEX3[4]  ; clk        ; 6.816 ; 6.900 ; Rise       ; clk             ;
+;  HEX3[5]  ; clk        ; 7.243 ; 7.485 ; Rise       ; clk             ;
+;  HEX3[6]  ; clk        ; 8.240 ; 7.518 ; Rise       ; clk             ;
+; HEX4[*]   ; clk        ; 6.160 ; 6.464 ; Rise       ; clk             ;
+;  HEX4[0]  ; clk        ; 6.293 ; 6.582 ; Rise       ; clk             ;
+;  HEX4[1]  ; clk        ; 6.346 ; 6.663 ; Rise       ; clk             ;
+;  HEX4[2]  ; clk        ; 6.739 ; 7.331 ; Rise       ; clk             ;
+;  HEX4[3]  ; clk        ; 7.238 ; 7.888 ; Rise       ; clk             ;
+;  HEX4[4]  ; clk        ; 6.779 ; 7.220 ; Rise       ; clk             ;
+;  HEX4[5]  ; clk        ; 6.160 ; 6.583 ; Rise       ; clk             ;
+;  HEX4[6]  ; clk        ; 6.803 ; 6.464 ; Rise       ; clk             ;
+; HEX5[*]   ; clk        ; 6.888 ; 6.898 ; Rise       ; clk             ;
+;  HEX5[0]  ; clk        ; 7.350 ; 7.738 ; Rise       ; clk             ;
+;  HEX5[1]  ; clk        ; 6.888 ; 7.148 ; Rise       ; clk             ;
+;  HEX5[2]  ; clk        ; 7.087 ; 7.393 ; Rise       ; clk             ;
+;  HEX5[3]  ; clk        ; 7.162 ; 7.513 ; Rise       ; clk             ;
+;  HEX5[4]  ; clk        ; 7.813 ; 8.529 ; Rise       ; clk             ;
+;  HEX5[5]  ; clk        ; 7.154 ; 7.520 ; Rise       ; clk             ;
+;  HEX5[6]  ; clk        ; 7.162 ; 6.898 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1182,6 +1192,7 @@ No synchronizer chains to report.
 +-----------+--------------+-----------------+-----------------+
 ; clk       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; reset     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; add_model ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; and_model ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW5       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW0       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -1402,13 +1413,13 @@ No synchronizer chains to report.
 ; From Clock                                            ; To Clock                                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 ; clock_and_mem_clock:inst|clock_out                    ; clk                                                   ; 821      ; 99       ; 0        ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; clk                                                   ; 98       ; 98       ; 0        ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; clk                                                   ; 98       ; 98       ; 0        ; 0        ;
 ; clk                                                   ; clock_and_mem_clock:inst|clock_out                    ; 2324     ; 0        ; 0        ; 0        ;
-; clock_and_mem_clock:inst|clock_out                    ; clock_and_mem_clock:inst|clock_out                    ; 1878773  ; 70432    ; 10539    ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; clock_and_mem_clock:inst|clock_out                    ; 72       ; 432      ; 0        ; 0        ;
-; clk                                                   ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 10       ; 0        ;
-; clock_and_mem_clock:inst|clock_out                    ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 9        ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 5        ; 5        ;
+; clock_and_mem_clock:inst|clock_out                    ; clock_and_mem_clock:inst|clock_out                    ; 1878143  ; 70432    ; 10224    ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; clock_and_mem_clock:inst|clock_out                    ; 72       ; 432      ; 0        ; 0        ;
+; clk                                                   ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 10       ; 0        ;
+; clock_and_mem_clock:inst|clock_out                    ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 14       ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 5        ; 5        ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1419,13 +1430,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                                            ; To Clock                                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 ; clock_and_mem_clock:inst|clock_out                    ; clk                                                   ; 821      ; 99       ; 0        ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; clk                                                   ; 98       ; 98       ; 0        ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; clk                                                   ; 98       ; 98       ; 0        ; 0        ;
 ; clk                                                   ; clock_and_mem_clock:inst|clock_out                    ; 2324     ; 0        ; 0        ; 0        ;
-; clock_and_mem_clock:inst|clock_out                    ; clock_and_mem_clock:inst|clock_out                    ; 1878773  ; 70432    ; 10539    ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; clock_and_mem_clock:inst|clock_out                    ; 72       ; 432      ; 0        ; 0        ;
-; clk                                                   ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 10       ; 0        ;
-; clock_and_mem_clock:inst|clock_out                    ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 9        ; 0        ;
-; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 5        ; 5        ;
+; clock_and_mem_clock:inst|clock_out                    ; clock_and_mem_clock:inst|clock_out                    ; 1878143  ; 70432    ; 10224    ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; clock_and_mem_clock:inst|clock_out                    ; 72       ; 432      ; 0        ; 0        ;
+; clk                                                   ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 10       ; 0        ;
+; clock_and_mem_clock:inst|clock_out                    ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 14       ; 0        ;
+; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] ; 0        ; 0        ; 5        ; 5        ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1449,8 +1460,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 12    ; 12   ;
-; Unconstrained Input Port Paths  ; 1564  ; 1564 ;
+; Unconstrained Input Ports       ; 13    ; 13   ;
+; Unconstrained Input Port Paths  ; 1541  ; 1541 ;
 ; Unconstrained Output Ports      ; 42    ; 42   ;
 ; Unconstrained Output Port Paths ; 1344  ; 1344 ;
 +---------------------------------+-------+------+
@@ -1462,7 +1473,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 03 20:38:05 2021
+    Info: Processing started: Fri Jun 04 18:04:37 2021
 Info: Command: quartus_sta sc_computer -c sc_computer
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1474,117 +1485,125 @@ Info (332142): No user constrained base clocks found in the design. Calling "der
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
     Info (332105): create_clock -period 1.000 -name clock_and_mem_clock:inst|clock_out clock_and_mem_clock:inst|clock_out
-    Info (332105): create_clock -period 1.000 -name pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2]
+    Info (332105): create_clock -period 1.000 -name pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2]
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst3|mem_stage|io_input_reg|io_imput_mux2x32|WideOr0~0  from: datae  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -13.346
+Info (332146): Worst-case setup slack is -13.011
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -13.346           -6504.410 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -6.864             -28.964 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
-    Info (332119):    -3.655            -461.132 clk 
-Info (332146): Worst-case hold slack is -4.192
+    Info (332119):   -13.011           -6496.630 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -6.428             -31.144 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -4.442            -561.199 clk 
+Info (332146): Worst-case hold slack is -2.470
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.192             -87.766 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -1.355             -90.228 clk 
-    Info (332119):    -1.203              -5.287 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.470            -107.140 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -1.588              -5.907 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -0.938             -60.794 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174            -981.878 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -2.174            -222.701 clk 
-    Info (332119):     0.046               0.000 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.174           -1009.610 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -2.174            -223.067 clk 
+    Info (332119):    -0.071              -0.187 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst3|mem_stage|io_input_reg|io_imput_mux2x32|WideOr0~0  from: datae  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -13.295
+Info (332146): Worst-case setup slack is -12.982
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -13.295           -6528.827 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -6.824             -28.800 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
-    Info (332119):    -3.442            -432.801 clk 
-Info (332146): Worst-case hold slack is -4.181
+    Info (332119):   -12.982           -6463.039 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -6.314             -30.649 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -4.178            -525.691 clk 
+Info (332146): Worst-case hold slack is -2.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.181             -85.745 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -1.576            -109.379 clk 
-    Info (332119):    -1.128              -5.064 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.387             -99.536 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -1.554              -5.841 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -0.965             -72.546 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174           -1054.439 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -2.174            -226.306 clk 
-    Info (332119):     0.012               0.000 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.174           -1023.122 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -2.174            -227.157 clk 
+    Info (332119):    -0.081              -0.218 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst3|mem_stage|io_input_reg|io_imput_mux2x32|WideOr0~0  from: datae  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -7.920
+Info (332146): Worst-case setup slack is -8.066
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.920           -3874.527 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -3.612             -14.480 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
-    Info (332119):    -1.771            -221.566 clk 
-Info (332146): Worst-case hold slack is -2.342
+    Info (332119):    -8.066           -3828.640 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -3.184             -15.300 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.236            -276.160 clk 
+Info (332146): Worst-case hold slack is -1.379
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.342             -50.045 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -0.807              -3.666 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
-    Info (332119):    -0.696             -49.886 clk 
+    Info (332119):    -1.379             -60.563 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -1.140              -4.248 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -0.466             -26.986 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174            -176.847 clk 
-    Info (332119):    -2.174            -101.594 clock_and_mem_clock:inst|clock_out 
-    Info (332119):     0.099               0.000 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.174            -176.630 clk 
+    Info (332119):    -2.174            -102.749 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -0.074              -0.150 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
 Info: Analyzing Fast 1100mV 0C Model
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst3|mem_stage|io_input_reg|io_imput_mux2x32|WideOr0~0  from: datae  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -7.281
+Info (332146): Worst-case setup slack is -7.488
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.281           -3578.160 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -3.491             -14.139 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
-    Info (332119):    -1.617            -201.880 clk 
-Info (332146): Worst-case hold slack is -2.338
+    Info (332119):    -7.488           -3512.136 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -3.068             -14.698 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.031            -249.187 clk 
+Info (332146): Worst-case hold slack is -1.393
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.338             -53.003 clock_and_mem_clock:inst|clock_out 
-    Info (332119):    -0.860             -65.757 clk 
-    Info (332119):    -0.700              -3.270 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -1.393             -60.238 clock_and_mem_clock:inst|clock_out 
+    Info (332119):    -1.054              -3.893 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -0.559             -38.618 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174            -176.609 clk 
-    Info (332119):    -2.174            -101.594 clock_and_mem_clock:inst|clock_out 
-    Info (332119):     0.142               0.000 pipeline_computer_main:inst9|pipeemreg:em_reg|malu[2] 
+    Info (332119):    -2.174            -176.491 clk 
+    Info (332119):    -2.174            -102.612 clock_and_mem_clock:inst|clock_out 
+    Info (332119):     0.013               0.000 pipeline_computer_main:inst3|pipeemreg:em_reg|malu[2] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 5031 megabytes
-    Info: Processing ended: Thu Jun 03 20:38:27 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 5029 megabytes
+    Info: Processing ended: Fri Jun 04 18:05:00 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:23
 
 

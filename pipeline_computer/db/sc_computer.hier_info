@@ -6,9 +6,10 @@ HEX0[3] <= out_port_seg:inst7.out0[3]
 HEX0[4] <= out_port_seg:inst7.out0[4]
 HEX0[5] <= out_port_seg:inst7.out0[5]
 HEX0[6] <= out_port_seg:inst7.out0[6]
-reset => pipeline_computer_main:inst9.resetn
+reset => pipeline_computer_main:inst3.resetn
 clk => clock_and_mem_clock:inst.clock_in
-and_model => pipeline_computer_main:inst9.and_model
+and_model => pipeline_computer_main:inst3.and_model
+add_model => pipeline_computer_main:inst3.add_model
 SW9 => in_port:inst1.sw4
 SW8 => in_port:inst1.sw3
 SW7 => in_port:inst1.sw2
@@ -165,7 +166,7 @@ ledsegments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 ledsegments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9
+|test|pipeline_computer_main:inst3
 resetn => resetn.IN6
 clock => clock.IN7
 mem_clock => mem_clock.IN2
@@ -490,73 +491,74 @@ in_port1[29] => in_port1[29].IN1
 in_port1[30] => in_port1[30].IN1
 in_port1[31] => in_port1[31].IN1
 and_model => and_model.IN1
-mem_dataout[0] <= pipemem:mem_stage.port12
-mem_dataout[1] <= pipemem:mem_stage.port12
-mem_dataout[2] <= pipemem:mem_stage.port12
-mem_dataout[3] <= pipemem:mem_stage.port12
-mem_dataout[4] <= pipemem:mem_stage.port12
-mem_dataout[5] <= pipemem:mem_stage.port12
-mem_dataout[6] <= pipemem:mem_stage.port12
-mem_dataout[7] <= pipemem:mem_stage.port12
-mem_dataout[8] <= pipemem:mem_stage.port12
-mem_dataout[9] <= pipemem:mem_stage.port12
-mem_dataout[10] <= pipemem:mem_stage.port12
-mem_dataout[11] <= pipemem:mem_stage.port12
-mem_dataout[12] <= pipemem:mem_stage.port12
-mem_dataout[13] <= pipemem:mem_stage.port12
-mem_dataout[14] <= pipemem:mem_stage.port12
-mem_dataout[15] <= pipemem:mem_stage.port12
-mem_dataout[16] <= pipemem:mem_stage.port12
-mem_dataout[17] <= pipemem:mem_stage.port12
-mem_dataout[18] <= pipemem:mem_stage.port12
-mem_dataout[19] <= pipemem:mem_stage.port12
-mem_dataout[20] <= pipemem:mem_stage.port12
-mem_dataout[21] <= pipemem:mem_stage.port12
-mem_dataout[22] <= pipemem:mem_stage.port12
-mem_dataout[23] <= pipemem:mem_stage.port12
-mem_dataout[24] <= pipemem:mem_stage.port12
-mem_dataout[25] <= pipemem:mem_stage.port12
-mem_dataout[26] <= pipemem:mem_stage.port12
-mem_dataout[27] <= pipemem:mem_stage.port12
-mem_dataout[28] <= pipemem:mem_stage.port12
-mem_dataout[29] <= pipemem:mem_stage.port12
-mem_dataout[30] <= pipemem:mem_stage.port12
-mem_dataout[31] <= pipemem:mem_stage.port12
-io_read_data[0] <= pipemem:mem_stage.port13
-io_read_data[1] <= pipemem:mem_stage.port13
-io_read_data[2] <= pipemem:mem_stage.port13
-io_read_data[3] <= pipemem:mem_stage.port13
-io_read_data[4] <= pipemem:mem_stage.port13
-io_read_data[5] <= pipemem:mem_stage.port13
-io_read_data[6] <= pipemem:mem_stage.port13
-io_read_data[7] <= pipemem:mem_stage.port13
-io_read_data[8] <= pipemem:mem_stage.port13
-io_read_data[9] <= pipemem:mem_stage.port13
-io_read_data[10] <= pipemem:mem_stage.port13
-io_read_data[11] <= pipemem:mem_stage.port13
-io_read_data[12] <= pipemem:mem_stage.port13
-io_read_data[13] <= pipemem:mem_stage.port13
-io_read_data[14] <= pipemem:mem_stage.port13
-io_read_data[15] <= pipemem:mem_stage.port13
-io_read_data[16] <= pipemem:mem_stage.port13
-io_read_data[17] <= pipemem:mem_stage.port13
-io_read_data[18] <= pipemem:mem_stage.port13
-io_read_data[19] <= pipemem:mem_stage.port13
-io_read_data[20] <= pipemem:mem_stage.port13
-io_read_data[21] <= pipemem:mem_stage.port13
-io_read_data[22] <= pipemem:mem_stage.port13
-io_read_data[23] <= pipemem:mem_stage.port13
-io_read_data[24] <= pipemem:mem_stage.port13
-io_read_data[25] <= pipemem:mem_stage.port13
-io_read_data[26] <= pipemem:mem_stage.port13
-io_read_data[27] <= pipemem:mem_stage.port13
-io_read_data[28] <= pipemem:mem_stage.port13
-io_read_data[29] <= pipemem:mem_stage.port13
-io_read_data[30] <= pipemem:mem_stage.port13
-io_read_data[31] <= pipemem:mem_stage.port13
+add_model => add_model.IN1
+mem_dataout[0] <= pipemem:mem_stage.port13
+mem_dataout[1] <= pipemem:mem_stage.port13
+mem_dataout[2] <= pipemem:mem_stage.port13
+mem_dataout[3] <= pipemem:mem_stage.port13
+mem_dataout[4] <= pipemem:mem_stage.port13
+mem_dataout[5] <= pipemem:mem_stage.port13
+mem_dataout[6] <= pipemem:mem_stage.port13
+mem_dataout[7] <= pipemem:mem_stage.port13
+mem_dataout[8] <= pipemem:mem_stage.port13
+mem_dataout[9] <= pipemem:mem_stage.port13
+mem_dataout[10] <= pipemem:mem_stage.port13
+mem_dataout[11] <= pipemem:mem_stage.port13
+mem_dataout[12] <= pipemem:mem_stage.port13
+mem_dataout[13] <= pipemem:mem_stage.port13
+mem_dataout[14] <= pipemem:mem_stage.port13
+mem_dataout[15] <= pipemem:mem_stage.port13
+mem_dataout[16] <= pipemem:mem_stage.port13
+mem_dataout[17] <= pipemem:mem_stage.port13
+mem_dataout[18] <= pipemem:mem_stage.port13
+mem_dataout[19] <= pipemem:mem_stage.port13
+mem_dataout[20] <= pipemem:mem_stage.port13
+mem_dataout[21] <= pipemem:mem_stage.port13
+mem_dataout[22] <= pipemem:mem_stage.port13
+mem_dataout[23] <= pipemem:mem_stage.port13
+mem_dataout[24] <= pipemem:mem_stage.port13
+mem_dataout[25] <= pipemem:mem_stage.port13
+mem_dataout[26] <= pipemem:mem_stage.port13
+mem_dataout[27] <= pipemem:mem_stage.port13
+mem_dataout[28] <= pipemem:mem_stage.port13
+mem_dataout[29] <= pipemem:mem_stage.port13
+mem_dataout[30] <= pipemem:mem_stage.port13
+mem_dataout[31] <= pipemem:mem_stage.port13
+io_read_data[0] <= pipemem:mem_stage.port14
+io_read_data[1] <= pipemem:mem_stage.port14
+io_read_data[2] <= pipemem:mem_stage.port14
+io_read_data[3] <= pipemem:mem_stage.port14
+io_read_data[4] <= pipemem:mem_stage.port14
+io_read_data[5] <= pipemem:mem_stage.port14
+io_read_data[6] <= pipemem:mem_stage.port14
+io_read_data[7] <= pipemem:mem_stage.port14
+io_read_data[8] <= pipemem:mem_stage.port14
+io_read_data[9] <= pipemem:mem_stage.port14
+io_read_data[10] <= pipemem:mem_stage.port14
+io_read_data[11] <= pipemem:mem_stage.port14
+io_read_data[12] <= pipemem:mem_stage.port14
+io_read_data[13] <= pipemem:mem_stage.port14
+io_read_data[14] <= pipemem:mem_stage.port14
+io_read_data[15] <= pipemem:mem_stage.port14
+io_read_data[16] <= pipemem:mem_stage.port14
+io_read_data[17] <= pipemem:mem_stage.port14
+io_read_data[18] <= pipemem:mem_stage.port14
+io_read_data[19] <= pipemem:mem_stage.port14
+io_read_data[20] <= pipemem:mem_stage.port14
+io_read_data[21] <= pipemem:mem_stage.port14
+io_read_data[22] <= pipemem:mem_stage.port14
+io_read_data[23] <= pipemem:mem_stage.port14
+io_read_data[24] <= pipemem:mem_stage.port14
+io_read_data[25] <= pipemem:mem_stage.port14
+io_read_data[26] <= pipemem:mem_stage.port14
+io_read_data[27] <= pipemem:mem_stage.port14
+io_read_data[28] <= pipemem:mem_stage.port14
+io_read_data[29] <= pipemem:mem_stage.port14
+io_read_data[30] <= pipemem:mem_stage.port14
+io_read_data[31] <= pipemem:mem_stage.port14
 
 
-|test|pipeline_computer_main:inst9|pipepc:prog_cnt
+|test|pipeline_computer_main:inst3|pipepc:prog_cnt
 npc[0] => npc[0].IN1
 npc[1] => npc[1].IN1
 npc[2] => npc[2].IN1
@@ -626,7 +628,7 @@ pc[30] <= dffe32:next_pc.port4
 pc[31] <= dffe32:next_pc.port4
 
 
-|test|pipeline_computer_main:inst9|pipepc:prog_cnt|dffe32:next_pc
+|test|pipeline_computer_main:inst3|pipepc:prog_cnt|dffe32:next_pc
 d[0] => q[0]~reg0.DATAIN
 d[1] => q[1]~reg0.DATAIN
 d[2] => q[2]~reg0.DATAIN
@@ -789,41 +791,41 @@ q[30] <= q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeif:if_stage
+|test|pipeline_computer_main:inst3|pipeif:if_stage
 pcsource[0] => pcsource[0].IN1
 pcsource[1] => pcsource[1].IN1
-pc[0] => pc[0].IN1
-pc[1] => pc[1].IN1
-pc[2] => pc[2].IN2
-pc[3] => pc[3].IN2
-pc[4] => pc[4].IN2
-pc[5] => pc[5].IN2
-pc[6] => pc[6].IN2
-pc[7] => pc[7].IN2
-pc[8] => pc[8].IN1
-pc[9] => pc[9].IN1
-pc[10] => pc[10].IN1
-pc[11] => pc[11].IN1
-pc[12] => pc[12].IN1
-pc[13] => pc[13].IN1
-pc[14] => pc[14].IN1
-pc[15] => pc[15].IN1
-pc[16] => pc[16].IN1
-pc[17] => pc[17].IN1
-pc[18] => pc[18].IN1
-pc[19] => pc[19].IN1
-pc[20] => pc[20].IN1
-pc[21] => pc[21].IN1
-pc[22] => pc[22].IN1
-pc[23] => pc[23].IN1
-pc[24] => pc[24].IN1
-pc[25] => pc[25].IN1
-pc[26] => pc[26].IN1
-pc[27] => pc[27].IN1
-pc[28] => pc[28].IN1
-pc[29] => pc[29].IN1
-pc[30] => pc[30].IN1
-pc[31] => pc[31].IN1
+pc[0] => pc4[0].IN1
+pc[1] => pc4[1].IN1
+pc[2] => pc[2].IN1
+pc[3] => pc[3].IN1
+pc[4] => pc[4].IN1
+pc[5] => pc[5].IN1
+pc[6] => pc[6].IN1
+pc[7] => pc[7].IN1
+pc[8] => Add0.IN54
+pc[9] => Add0.IN53
+pc[10] => Add0.IN52
+pc[11] => Add0.IN51
+pc[12] => Add0.IN50
+pc[13] => Add0.IN49
+pc[14] => Add0.IN48
+pc[15] => Add0.IN47
+pc[16] => Add0.IN46
+pc[17] => Add0.IN45
+pc[18] => Add0.IN44
+pc[19] => Add0.IN43
+pc[20] => Add0.IN42
+pc[21] => Add0.IN41
+pc[22] => Add0.IN40
+pc[23] => Add0.IN39
+pc[24] => Add0.IN38
+pc[25] => Add0.IN37
+pc[26] => Add0.IN36
+pc[27] => Add0.IN35
+pc[28] => Add0.IN34
+pc[29] => Add0.IN33
+pc[30] => Add0.IN32
+pc[31] => Add0.IN31
 bpc[0] => bpc[0].IN1
 bpc[1] => bpc[1].IN1
 bpc[2] => bpc[2].IN1
@@ -1019,7 +1021,7 @@ ins[31] <= lpm_rom_irom:irom.port2
 mem_clock => mem_clock.IN1
 
 
-|test|pipeline_computer_main:inst9|pipeif:if_stage|mux4x32:selectnewpc
+|test|pipeline_computer_main:inst3|pipeif:if_stage|mux4x32:selectnewpc
 a0[0] => Mux31.IN0
 a0[1] => Mux30.IN0
 a0[2] => Mux29.IN0
@@ -1246,202 +1248,7 @@ y[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeif:if_stage|cla32:pc_plus4
-a[0] => Add0.IN64
-a[0] => Add1.IN32
-a[1] => Add0.IN63
-a[1] => Add1.IN31
-a[2] => Add0.IN62
-a[2] => Add1.IN30
-a[3] => Add0.IN61
-a[3] => Add1.IN29
-a[4] => Add0.IN60
-a[4] => Add1.IN28
-a[5] => Add0.IN59
-a[5] => Add1.IN27
-a[6] => Add0.IN58
-a[6] => Add1.IN26
-a[7] => Add0.IN57
-a[7] => Add1.IN25
-a[8] => Add0.IN56
-a[8] => Add1.IN24
-a[9] => Add0.IN55
-a[9] => Add1.IN23
-a[10] => Add0.IN54
-a[10] => Add1.IN22
-a[11] => Add0.IN53
-a[11] => Add1.IN21
-a[12] => Add0.IN52
-a[12] => Add1.IN20
-a[13] => Add0.IN51
-a[13] => Add1.IN19
-a[14] => Add0.IN50
-a[14] => Add1.IN18
-a[15] => Add0.IN49
-a[15] => Add1.IN17
-a[16] => Add0.IN48
-a[16] => Add1.IN16
-a[17] => Add0.IN47
-a[17] => Add1.IN15
-a[18] => Add0.IN46
-a[18] => Add1.IN14
-a[19] => Add0.IN45
-a[19] => Add1.IN13
-a[20] => Add0.IN44
-a[20] => Add1.IN12
-a[21] => Add0.IN43
-a[21] => Add1.IN11
-a[22] => Add0.IN42
-a[22] => Add1.IN10
-a[23] => Add0.IN41
-a[23] => Add1.IN9
-a[24] => Add0.IN40
-a[24] => Add1.IN8
-a[25] => Add0.IN39
-a[25] => Add1.IN7
-a[26] => Add0.IN38
-a[26] => Add1.IN6
-a[27] => Add0.IN37
-a[27] => Add1.IN5
-a[28] => Add0.IN36
-a[28] => Add1.IN4
-a[29] => Add0.IN35
-a[29] => Add1.IN3
-a[30] => Add0.IN34
-a[30] => Add1.IN2
-a[31] => Add0.IN33
-a[31] => Add1.IN1
-b[0] => Add1.IN64
-b[0] => Add0.IN32
-b[1] => Add1.IN63
-b[1] => Add0.IN31
-b[2] => Add1.IN62
-b[2] => Add0.IN30
-b[3] => Add1.IN61
-b[3] => Add0.IN29
-b[4] => Add1.IN60
-b[4] => Add0.IN28
-b[5] => Add1.IN59
-b[5] => Add0.IN27
-b[6] => Add1.IN58
-b[6] => Add0.IN26
-b[7] => Add1.IN57
-b[7] => Add0.IN25
-b[8] => Add1.IN56
-b[8] => Add0.IN24
-b[9] => Add1.IN55
-b[9] => Add0.IN23
-b[10] => Add1.IN54
-b[10] => Add0.IN22
-b[11] => Add1.IN53
-b[11] => Add0.IN21
-b[12] => Add1.IN52
-b[12] => Add0.IN20
-b[13] => Add1.IN51
-b[13] => Add0.IN19
-b[14] => Add1.IN50
-b[14] => Add0.IN18
-b[15] => Add1.IN49
-b[15] => Add0.IN17
-b[16] => Add1.IN48
-b[16] => Add0.IN16
-b[17] => Add1.IN47
-b[17] => Add0.IN15
-b[18] => Add1.IN46
-b[18] => Add0.IN14
-b[19] => Add1.IN45
-b[19] => Add0.IN13
-b[20] => Add1.IN44
-b[20] => Add0.IN12
-b[21] => Add1.IN43
-b[21] => Add0.IN11
-b[22] => Add1.IN42
-b[22] => Add0.IN10
-b[23] => Add1.IN41
-b[23] => Add0.IN9
-b[24] => Add1.IN40
-b[24] => Add0.IN8
-b[25] => Add1.IN39
-b[25] => Add0.IN7
-b[26] => Add1.IN38
-b[26] => Add0.IN6
-b[27] => Add1.IN37
-b[27] => Add0.IN5
-b[28] => Add1.IN36
-b[28] => Add0.IN4
-b[29] => Add1.IN35
-b[29] => Add0.IN3
-b[30] => Add1.IN34
-b[30] => Add0.IN2
-b[31] => Add1.IN33
-b[31] => Add0.IN1
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-sub => s.OUTPUTSELECT
-s[0] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[1] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[2] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[3] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[4] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[5] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[6] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[7] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[8] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[9] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[10] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[11] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[12] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[13] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[14] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[15] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[16] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[17] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[18] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[19] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[20] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[21] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[22] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[23] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[24] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[25] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[26] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[27] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[28] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[29] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[30] <= s.DB_MAX_OUTPUT_PORT_TYPE
-s[31] <= s.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom
+|test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -1483,7 +1290,7 @@ q[30] <= altsyncram:altsyncram_component.q_a
 q[31] <= altsyncram:altsyncram_component.q_a
 
 
-|test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component
+|test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -1578,7 +1385,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|test|pipeline_computer_main:inst9|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated
+|test|pipeline_computer_main:inst3|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component|altsyncram_oqi1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -1837,7 +1644,7 @@ q_a[30] <= ram_block1a30.PORTADATAOUT
 q_a[31] <= ram_block1a31.PORTADATAOUT
 
 
-|test|pipeline_computer_main:inst9|pipeir:inst_reg
+|test|pipeline_computer_main:inst3|pipeir:inst_reg
 pc4[0] => pc4[0].IN1
 pc4[1] => pc4[1].IN1
 pc4[2] => pc4[2].IN1
@@ -1971,7 +1778,7 @@ inst[30] <= dffe32:instruction.port4
 inst[31] <= dffe32:instruction.port4
 
 
-|test|pipeline_computer_main:inst9|pipeir:inst_reg|dffe32:pc_plus4
+|test|pipeline_computer_main:inst3|pipeir:inst_reg|dffe32:pc_plus4
 d[0] => q[0]~reg0.DATAIN
 d[1] => q[1]~reg0.DATAIN
 d[2] => q[2]~reg0.DATAIN
@@ -2134,7 +1941,7 @@ q[30] <= q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeir:inst_reg|dffe32:instruction
+|test|pipeline_computer_main:inst3|pipeir:inst_reg|dffe32:instruction
 d[0] => q[0]~reg0.DATAIN
 d[1] => q[1]~reg0.DATAIN
 d[2] => q[2]~reg0.DATAIN
@@ -2297,7 +2104,7 @@ q[30] <= q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage
+|test|pipeline_computer_main:inst3|pipeid:id_stage
 mwreg => mwreg.IN1
 mrn[0] => mrn[0].IN1
 mrn[1] => mrn[1].IN1
@@ -2706,7 +2513,7 @@ dshift <= sc_cu:cu.port19
 djal <= sc_cu:cu.port16
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage|sc_cu:cu
+|test|pipeline_computer_main:inst3|pipeid:id_stage|sc_cu:cu
 op[0] => WideNor0.IN0
 op[0] => i_ori.IN1
 op[0] => i_lw.IN1
@@ -2855,7 +2662,7 @@ fwda[0] <= fwda.DB_MAX_OUTPUT_PORT_TYPE
 fwda[1] <= fwda.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage|regfile:regf
+|test|pipeline_computer_main:inst3|pipeid:id_stage|regfile:regf
 rna[0] => Mux0.IN5
 rna[0] => Mux1.IN5
 rna[0] => Mux2.IN5
@@ -6239,7 +6046,7 @@ qb[30] <= qb.DB_MAX_OUTPUT_PORT_TYPE
 qb[31] <= qb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage|mux2x5:rd_rt
+|test|pipeline_computer_main:inst3|pipeid:id_stage|mux2x5:rd_rt
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA
@@ -6262,7 +6069,7 @@ y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[4] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_a
+|test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_a
 a0[0] => Mux31.IN0
 a0[1] => Mux30.IN0
 a0[2] => Mux29.IN0
@@ -6489,7 +6296,7 @@ y[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeid:id_stage|mux4x32:alu_b
+|test|pipeline_computer_main:inst3|pipeid:id_stage|mux4x32:alu_b
 a0[0] => Mux31.IN0
 a0[1] => Mux30.IN0
 a0[2] => Mux29.IN0
@@ -6716,7 +6523,7 @@ y[30] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipedereg:de_reg
+|test|pipeline_computer_main:inst3|pipedereg:de_reg
 dwreg => ewreg~reg0.DATAIN
 dm2reg => em2reg~reg0.DATAIN
 dwmem => ewmem~reg0.DATAIN
@@ -7291,7 +7098,7 @@ epc4[30] <= epc4[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 epc4[31] <= epc4[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeexe:exe_stage
+|test|pipeline_computer_main:inst3|pipeexe:exe_stage
 ealuc[0] => ealuc[0].IN1
 ealuc[1] => ealuc[1].IN1
 ealuc[2] => ealuc[2].IN1
@@ -7471,7 +7278,7 @@ ealu[30] <= mux2x32:e_choose_epc.port3
 ealu[31] <= mux2x32:e_choose_epc.port3
 
 
-|test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_a
+|test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_a
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA
@@ -7602,7 +7409,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_alu_b
+|test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_alu_b
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA
@@ -7733,7 +7540,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeexe:exe_stage|mux2x32:e_choose_epc
+|test|pipeline_computer_main:inst3|pipeexe:exe_stage|mux2x32:e_choose_epc
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA
@@ -7864,7 +7671,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeexe:exe_stage|alu:al_unit
+|test|pipeline_computer_main:inst3|pipeexe:exe_stage|alu:al_unit
 a[0] => Add0.IN32
 a[0] => Add1.IN64
 a[0] => s.IN0
@@ -8573,7 +8380,7 @@ s[31] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipeemreg:em_reg
+|test|pipeline_computer_main:inst3|pipeemreg:em_reg
 ewreg => mwreg~reg0.DATAIN
 em2reg => mm2reg~reg0.DATAIN
 ewmem => mwmem~reg0.DATAIN
@@ -8864,7 +8671,7 @@ mrn[3] <= mrn[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mrn[4] <= mrn[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage
+|test|pipeline_computer_main:inst3|pipemem:mem_stage
 we => write_enable.IN0
 addr[0] => addr[0].IN2
 addr[1] => addr[1].IN2
@@ -9125,6 +8932,7 @@ in_port1[29] => in_port1[29].IN1
 in_port1[30] => in_port1[30].IN1
 in_port1[31] => in_port1[31].IN1
 and_model => and_model.IN1
+add_model => add_model.IN1
 mem_dataout[0] <= mem_dataout[0].DB_MAX_OUTPUT_PORT_TYPE
 mem_dataout[1] <= mem_dataout[1].DB_MAX_OUTPUT_PORT_TYPE
 mem_dataout[2] <= mem_dataout[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -9191,7 +8999,7 @@ io_read_data[30] <= io_read_data[30].DB_MAX_OUTPUT_PORT_TYPE
 io_read_data[31] <= io_read_data[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|mux2x32:mem_io_dataout_mux
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|mux2x32:mem_io_dataout_mux
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA
@@ -9322,7 +9130,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -9396,7 +9204,7 @@ q[30] <= altsyncram:altsyncram_component.q_a
 q[31] <= altsyncram:altsyncram_component.q_a
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component
 wren_a => altsyncram_59m1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -9490,7 +9298,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component|altsyncram_59m1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -9781,7 +9589,7 @@ wren_a => ram_block1a30.PORTAWE
 wren_a => ram_block1a31.PORTAWE
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|io_output:io_output_reg
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|io_output:io_output_reg
 addr[0] => ~NO_FANOUT~
 addr[1] => ~NO_FANOUT~
 addr[2] => Decoder0.IN5
@@ -10200,7 +10008,7 @@ out_port2[30] <= out_port2[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_port2[31] <= out_port2[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg
 addr[0] => ~NO_FANOUT~
 addr[1] => ~NO_FANOUT~
 addr[2] => addr[2].IN1
@@ -10394,11 +10202,11 @@ in_port1[29] => in_reg1[29].DATAIN
 in_port1[30] => in_reg1[30].DATAIN
 in_port1[31] => in_reg1[31].DATAIN
 and_model => and_model.IN1
+add_model => add_model.IN1
 
 
-|test|pipeline_computer_main:inst9|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32
+|test|pipeline_computer_main:inst3|pipemem:mem_stage|io_input:io_input_reg|io_input_mux:io_imput_mux2x32
 a0[0] => Selector0.IN6
-a0[0] => Selector1.IN6
 a0[1] => Selector2.IN6
 a0[2] => Selector3.IN6
 a0[3] => Selector4.IN6
@@ -10431,7 +10239,6 @@ a0[29] => Selector30.IN6
 a0[30] => Selector31.IN6
 a0[31] => Selector32.IN6
 a1[0] => Selector0.IN7
-a1[0] => Selector1.IN7
 a1[1] => Selector2.IN7
 a1[2] => Selector3.IN7
 a1[3] => Selector4.IN7
@@ -10501,10 +10308,11 @@ y[28] <= y[28]$latch.DB_MAX_OUTPUT_PORT_TYPE
 y[29] <= y[29]$latch.DB_MAX_OUTPUT_PORT_TYPE
 y[30] <= y[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
-and_model => y[0].OUTPUTSELECT
+and_model => Selector0.IN8
+add_model => Selector0.IN9
 
 
-|test|pipeline_computer_main:inst9|pipemwreg:mw_reg
+|test|pipeline_computer_main:inst3|pipemwreg:mw_reg
 mwreg => wwreg~reg0.DATAIN
 mm2reg => wm2reg~reg0.DATAIN
 mmo[0] => wmo[0]~reg0.DATAIN
@@ -10791,7 +10599,7 @@ wrn[3] <= wrn[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 wrn[4] <= wrn[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|pipeline_computer_main:inst9|mux2x32:wb_stage
+|test|pipeline_computer_main:inst3|mux2x32:wb_stage
 a0[0] => y.DATAA
 a0[1] => y.DATAA
 a0[2] => y.DATAA

@@ -1,10 +1,10 @@
 module pipemem (we,addr,datain,clock,dmem_clk,dataout,
-	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,mem_dataout,io_read_data);
+	out_port0,out_port1,out_port2,in_port0,in_port1,and_model,add_model,mem_dataout,io_read_data);
 
 	input  [31:0]  addr;
    input  [31:0]  datain;
 	input [31:0] in_port0,in_port1;
-	input          we, clock,dmem_clk,and_model;
+	input          we, clock,dmem_clk,and_model,add_model;
 
 	output [31:0] dataout;
 	output [31:0] out_port0,out_port1,out_port2;
@@ -26,6 +26,6 @@ module pipemem (we,addr,datain,clock,dmem_clk,dataout,
 	lpm_ram_dq_dram  dram(addr[6:2],dmem_clk,datain,write_data_enable,mem_dataout );
 
 	io_output io_output_reg(addr,datain,write_io_enable,dmem_clk,out_port0,out_port1,out_port2);
-	io_input io_input_reg(addr,dmem_clk,io_read_data,in_port0,in_port1,and_model);
+	io_input io_input_reg(addr,dmem_clk,io_read_data,in_port0,in_port1,and_model,add_model);
 
 endmodule 
