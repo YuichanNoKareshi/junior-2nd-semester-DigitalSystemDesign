@@ -1,0 +1,373 @@
+# Compile of altera_mf.v was successful.
+# Compile of alu.v was successful.
+# Compile of cla32.v was successful.
+# Compile of clock_and_mem_clock.v was successful.
+# Compile of dff32.v was successful.
+# Compile of dffe32.v was successful.
+# Compile of in_port.v was successful.
+# Compile of io_input.v was successful.
+# Compile of io_output.v was successful.
+# Compile of lpm_ram_dq_dram.v was successful.
+# Compile of lpm_rom_irom.v was successful.
+# Compile of mux2x5.v was successful.
+# Compile of mux2x32.v was successful.
+# Compile of mux4x32.v was successful.
+# Compile of out_port_seg.v was successful.
+# Compile of pipedereg.v was successful.
+# Compile of pipeemreg.v was successful.
+# Compile of pipeexe.v was successful.
+# Compile of pipeid.v was successful.
+# Compile of pipeif.v was successful.
+# Compile of pipeir.v was successful.
+# Compile of pipeline_computer_main.v was successful.
+# Compile of pipemem.v was successful.
+# Compile of pipemwreg.v was successful.
+# Compile of pipepc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of sc_computer.v was successful.
+# Compile of sc_computer_sim.v was successful.
+# Compile of sc_cpu.v was successful.
+# Compile of sc_cu.v was successful.
+# Compile of sc_datamem.v was successful.
+# Compile of sc_instmen.v was successful.
+# Compile of sevenseg.v was successful.
+# Compile of pipelined_computer_sim.v was successful.
+# 34 compiles, 0 failed with no errors. 
+vsim -gui work.pipelined_computer_sim
+# vsim -gui work.pipelined_computer_sim 
+# Loading work.pipelined_computer_sim
+# Loading work.pipeline_computer_main
+# Loading work.pipepc
+# Loading work.dffe32
+# Loading work.pipeif
+# Loading work.mux4x32
+# Loading work.lpm_rom_irom
+# Loading work.altsyncram
+# Loading work.ALTERA_DEVICE_FAMILIES
+# Loading work.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.pipeir
+# Loading work.pipeid
+# Loading work.sc_cu
+# Loading work.regfile
+# Loading work.mux2x5
+# Loading work.pipedereg
+# Loading work.pipeexe
+# Loading work.mux2x32
+# Loading work.alu
+# Loading work.pipeemreg
+# Loading work.pipemem
+# Loading work.lpm_ram_dq_dram
+# Loading work.io_output
+# Loading work.io_input
+# Loading work.io_input_mux
+# Loading work.pipemwreg
+add wave -position insertpoint  \
+sim:/pipelined_computer_sim/resetn_sim \
+sim:/pipelined_computer_sim/clock_sim \
+sim:/pipelined_computer_sim/mem_clock_sim \
+sim:/pipelined_computer_sim/and_model \
+sim:/pipelined_computer_sim/add_model \
+sim:/pipelined_computer_sim/in_port0 \
+sim:/pipelined_computer_sim/in_port1 \
+sim:/pipelined_computer_sim/pc_sim \
+sim:/pipelined_computer_sim/inst_sim \
+sim:/pipelined_computer_sim/ealu_sim \
+sim:/pipelined_computer_sim/malu_sim \
+sim:/pipelined_computer_sim/walu_sim \
+sim:/pipelined_computer_sim/out_port0 \
+sim:/pipelined_computer_sim/out_port1 \
+sim:/pipelined_computer_sim/out_port2 \
+sim:/pipelined_computer_sim/mem_dataout \
+sim:/pipelined_computer_sim/io_read_data
+run
+#                    0resetn=0 clock=1 mem_clock=0
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+# WARNING: No extended dataflow license exists
+run
+run
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+# Compile of altera_mf.v was successful.
+# Compile of alu.v was successful.
+# Compile of cla32.v was successful.
+# Compile of clock_and_mem_clock.v was successful.
+# Compile of dff32.v was successful.
+# Compile of dffe32.v was successful.
+# Compile of in_port.v was successful.
+# Compile of io_input.v was successful.
+# Compile of io_output.v was successful.
+# Compile of lpm_ram_dq_dram.v was successful.
+# Compile of lpm_rom_irom.v was successful.
+# Compile of mux2x5.v was successful.
+# Compile of mux2x32.v was successful.
+# Compile of mux4x32.v was successful.
+# Compile of out_port_seg.v was successful.
+# Compile of pipedereg.v was successful.
+# Compile of pipeemreg.v was successful.
+# Compile of pipeexe.v was successful.
+# Compile of pipeid.v was successful.
+# Compile of pipeif.v was successful.
+# Compile of pipeir.v was successful.
+# Compile of pipeline_computer_main.v was successful.
+# Compile of pipemem.v was successful.
+# Compile of pipemwreg.v was successful.
+# Compile of pipepc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of sc_computer.v was successful.
+# Compile of sc_computer_sim.v was successful.
+# Compile of sc_cpu.v was successful.
+# Compile of sc_cu.v was successful.
+# Compile of sc_datamem.v was successful.
+# Compile of sc_instmen.v was successful.
+# Compile of sevenseg.v was successful.
+# Compile of pipelined_computer_sim.v was successful.
+# 34 compiles, 0 failed with no errors. 
+vsim -gui work.pipelined_computer_sim
+# vsim -gui work.pipelined_computer_sim 
+# Loading work.pipelined_computer_sim
+# Loading work.pipeline_computer_main
+# Loading work.pipepc
+# Loading work.dffe32
+# Loading work.pipeif
+# Loading work.mux4x32
+# Loading work.lpm_rom_irom
+# Loading work.altsyncram
+# Loading work.ALTERA_DEVICE_FAMILIES
+# Loading work.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.pipeir
+# Loading work.pipeid
+# Loading work.sc_cu
+# Loading work.regfile
+# Loading work.mux2x5
+# Loading work.pipedereg
+# Loading work.pipeexe
+# Loading work.mux2x32
+# Loading work.alu
+# Loading work.pipeemreg
+# Loading work.pipemem
+# Loading work.lpm_ram_dq_dram
+# Loading work.io_output
+# Loading work.io_input
+# Loading work.io_input_mux
+# Loading work.pipemwreg
+add wave -position insertpoint  \
+sim:/pipelined_computer_sim/in_port1
+add wave -position insertpoint  \
+sim:/pipelined_computer_sim/resetn_sim \
+sim:/pipelined_computer_sim/clock_sim \
+sim:/pipelined_computer_sim/mem_clock_sim \
+sim:/pipelined_computer_sim/and_model \
+sim:/pipelined_computer_sim/add_model \
+sim:/pipelined_computer_sim/in_port0 \
+sim:/pipelined_computer_sim/in_port1 \
+sim:/pipelined_computer_sim/pc_sim \
+sim:/pipelined_computer_sim/inst_sim \
+sim:/pipelined_computer_sim/ealu_sim \
+sim:/pipelined_computer_sim/malu_sim \
+sim:/pipelined_computer_sim/walu_sim \
+sim:/pipelined_computer_sim/out_port0 \
+sim:/pipelined_computer_sim/out_port1 \
+sim:/pipelined_computer_sim/out_port2 \
+sim:/pipelined_computer_sim/mem_dataout \
+sim:/pipelined_computer_sim/io_read_data
+run
+#                    0resetn=0 clock=1 mem_clock=0
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of altera_mf.v was successful.
+# Compile of alu.v was successful.
+# Compile of cla32.v was successful.
+# Compile of clock_and_mem_clock.v was successful.
+# Compile of dff32.v was successful.
+# Compile of dffe32.v was successful.
+# Compile of in_port.v was successful.
+# Compile of io_input.v was successful.
+# Compile of io_output.v was successful.
+# Compile of lpm_ram_dq_dram.v was successful.
+# Compile of lpm_rom_irom.v was successful.
+# Compile of mux2x5.v was successful.
+# Compile of mux2x32.v was successful.
+# Compile of mux4x32.v was successful.
+# Compile of out_port_seg.v was successful.
+# Compile of pipedereg.v was successful.
+# Compile of pipeemreg.v was successful.
+# Compile of pipeexe.v was successful.
+# Compile of pipeid.v was successful.
+# Compile of pipeif.v was successful.
+# Compile of pipeir.v was successful.
+# Compile of pipeline_computer_main.v was successful.
+# Compile of pipemem.v was successful.
+# Compile of pipemwreg.v was successful.
+# Compile of pipepc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of sc_computer.v was successful.
+# Compile of sc_computer_sim.v was successful.
+# Compile of sc_cpu.v was successful.
+# Compile of sc_cu.v was successful.
+# Compile of sc_datamem.v was successful.
+# Compile of sc_instmen.v was successful.
+# Compile of sevenseg.v was successful.
+# Compile of pipelined_computer_sim.v was successful.
+# 34 compiles, 0 failed with no errors. 
+vsim -gui work.pipelined_computer_sim
+# vsim -gui work.pipelined_computer_sim 
+# Loading work.pipelined_computer_sim
+# Loading work.pipeline_computer_main
+# Loading work.pipepc
+# Loading work.dffe32
+# Loading work.pipeif
+# Loading work.mux4x32
+# Loading work.lpm_rom_irom
+# Loading work.altsyncram
+# Loading work.ALTERA_DEVICE_FAMILIES
+# Loading work.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.pipeir
+# Loading work.pipeid
+# Loading work.sc_cu
+# Loading work.regfile
+# Loading work.mux2x5
+# Loading work.pipedereg
+# Loading work.pipeexe
+# Loading work.mux2x32
+# Loading work.alu
+# Loading work.pipeemreg
+# Loading work.pipemem
+# Loading work.lpm_ram_dq_dram
+# Loading work.io_output
+# Loading work.io_input
+# Loading work.io_input_mux
+# Loading work.pipemwreg
+add wave -position insertpoint  \
+sim:/pipelined_computer_sim/resetn_sim \
+sim:/pipelined_computer_sim/clock_sim \
+sim:/pipelined_computer_sim/mem_clock_sim \
+sim:/pipelined_computer_sim/and_model \
+sim:/pipelined_computer_sim/add_model \
+sim:/pipelined_computer_sim/in_port0 \
+sim:/pipelined_computer_sim/in_port1 \
+sim:/pipelined_computer_sim/pc_sim \
+sim:/pipelined_computer_sim/inst_sim \
+sim:/pipelined_computer_sim/ealu_sim \
+sim:/pipelined_computer_sim/malu_sim \
+sim:/pipelined_computer_sim/walu_sim \
+sim:/pipelined_computer_sim/out_port0 \
+sim:/pipelined_computer_sim/out_port1 \
+sim:/pipelined_computer_sim/out_port2 \
+sim:/pipelined_computer_sim/mem_dataout \
+sim:/pipelined_computer_sim/io_read_data
+run
+#                    0resetn=1 clock=1 mem_clock=0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of altera_mf.v was successful.
+# Compile of alu.v was successful.
+# Compile of cla32.v was successful.
+# Compile of clock_and_mem_clock.v was successful.
+# Compile of dff32.v was successful.
+# Compile of dffe32.v was successful.
+# Compile of in_port.v was successful.
+# Compile of io_input.v was successful.
+# Compile of io_output.v was successful.
+# Compile of lpm_ram_dq_dram.v was successful.
+# Compile of lpm_rom_irom.v was successful.
+# Compile of mux2x5.v was successful.
+# Compile of mux2x32.v was successful.
+# Compile of mux4x32.v was successful.
+# Compile of out_port_seg.v was successful.
+# Compile of pipedereg.v was successful.
+# Compile of pipeemreg.v was successful.
+# Compile of pipeexe.v was successful.
+# Compile of pipeid.v was successful.
+# Compile of pipeif.v was successful.
+# Compile of pipeir.v was successful.
+# Compile of pipeline_computer_main.v was successful.
+# Compile of pipemem.v was successful.
+# Compile of pipemwreg.v was successful.
+# Compile of pipepc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of sc_computer.v was successful.
+# Compile of sc_computer_sim.v was successful.
+# Compile of sc_cpu.v was successful.
+# Compile of sc_cu.v was successful.
+# Compile of sc_datamem.v was successful.
+# Compile of sc_instmen.v was successful.
+# Compile of sevenseg.v was successful.
+# Compile of pipelined_computer_sim.v was successful.
+# 34 compiles, 0 failed with no errors. 
+vsim -gui work.pipelined_computer_sim
+# vsim -gui work.pipelined_computer_sim 
+# Loading work.pipelined_computer_sim
+# Loading work.pipeline_computer_main
+# Loading work.pipepc
+# Loading work.dffe32
+# Loading work.pipeif
+# Loading work.mux4x32
+# Loading work.lpm_rom_irom
+# Loading work.altsyncram
+# Loading work.ALTERA_DEVICE_FAMILIES
+# Loading work.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.pipeir
+# Loading work.pipeid
+# Loading work.sc_cu
+# Loading work.regfile
+# Loading work.mux2x5
+# Loading work.pipedereg
+# Loading work.pipeexe
+# Loading work.mux2x32
+# Loading work.alu
+# Loading work.pipeemreg
+# Loading work.pipemem
+# Loading work.lpm_ram_dq_dram
+# Loading work.io_output
+# Loading work.io_input
+# Loading work.io_input_mux
+# Loading work.pipemwreg
+add wave -position insertpoint  \
+sim:/pipelined_computer_sim/resetn_sim \
+sim:/pipelined_computer_sim/clock_sim \
+sim:/pipelined_computer_sim/mem_clock_sim \
+sim:/pipelined_computer_sim/and_model \
+sim:/pipelined_computer_sim/add_model \
+sim:/pipelined_computer_sim/in_port0 \
+sim:/pipelined_computer_sim/in_port1 \
+sim:/pipelined_computer_sim/pc_sim \
+sim:/pipelined_computer_sim/inst_sim \
+sim:/pipelined_computer_sim/ealu_sim \
+sim:/pipelined_computer_sim/malu_sim \
+sim:/pipelined_computer_sim/walu_sim \
+sim:/pipelined_computer_sim/out_port0 \
+sim:/pipelined_computer_sim/out_port1 \
+sim:/pipelined_computer_sim/out_port2 \
+sim:/pipelined_computer_sim/mem_dataout \
+sim:/pipelined_computer_sim/io_read_data
+run
+#                    0resetn=0 clock=1 mem_clock=0
+run
+run
+run
+run
+run
+run
+run
+run

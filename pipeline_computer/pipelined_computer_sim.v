@@ -32,9 +32,9 @@ module pipelined_computer_sim;
 	initial begin
 		in_port1 = 5'b00000;
 		while (1)begin
-			#20 in_port1 = 3'b00000;
-			#20 in_port1 = 3'b11000;
-			#20 in_port1 = 3'b11111;
+			#20 in_port1 = 5'b00000;
+			#20 in_port1 = 5'b11000;
+			#20 in_port1 = 5'b11111;
 		end
 	end
 	initial begin

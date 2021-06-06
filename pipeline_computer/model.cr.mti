@@ -68,13 +68,6 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	sc_computer
 
-} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_cu.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_cu.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module sc_cu
-
-Top level modules:
-	sc_cu
-
 } {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipeif.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipeif.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module pipeif
@@ -82,12 +75,12 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	pipeif
 
-} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/cla32.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/cla32.v
+} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_cu.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_cu.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module cla32
+-- Compiling module sc_cu
 
 Top level modules:
-	cla32
+	sc_cu
 
 } {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/dff32.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/dff32.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -95,6 +88,13 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 
 Top level modules:
 	dff32
+
+} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/cla32.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/cla32.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module cla32
+
+Top level modules:
+	cla32
 
 } {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_datamem.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/sc_datamem.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -342,15 +342,9 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	lpm_ram_dq_dram
 
-} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v {2 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v
+} {} {}} C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v {1 {vlog -work work C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module pipelined_computer_sim
-** Warning: C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-** Warning: C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-** Warning: C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/pipelined_computer_sim.v(37): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
 
 Top level modules:
 	pipelined_computer_sim

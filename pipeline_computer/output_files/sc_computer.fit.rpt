@@ -1,5 +1,5 @@
 Fitter report for sc_computer
-Fri Jun 04 18:04:20 2021
+Sun Jun 06 20:39:35 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Fri Jun 04 18:04:20 2021      ;
+; Fitter Status                   ; Successful - Sun Jun 06 20:39:35 2021      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; sc_computer                                ;
 ; Top-level Entity Name           ; test                                       ;
@@ -3324,7 +3324,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176218): Packed 32 registers into blocks of type EC
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:09
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:08
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
 Info (170191): Fitter placement operations beginning
@@ -3333,23 +3333,23 @@ Info (170192): Fitter placement operations ending: elapsed time is 00:00:10
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 2% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 25% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:30
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:29
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 4.73 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 4.67 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:23
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:22
 Info (144001): Generated suppressed messages file C:/Codes++/grade_3term_2/DigitalSystemDesign/pipeline_computer/output_files/sc_computer.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 5697 megabytes
-    Info: Processing ended: Fri Jun 04 18:04:22 2021
-    Info: Elapsed time: 00:01:47
-    Info: Total CPU time (on all processors): 00:01:47
+    Info: Peak virtual memory: 5693 megabytes
+    Info: Processing ended: Sun Jun 06 20:39:36 2021
+    Info: Elapsed time: 00:01:43
+    Info: Total CPU time (on all processors): 00:01:43
 
 
 +----------------------------+

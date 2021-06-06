@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for sc_computer
-Fri Jun 04 18:05:00 2021
+Sun Jun 06 20:40:12 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -1473,7 +1473,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 04 18:04:37 2021
+    Info: Processing started: Sun Jun 06 20:39:51 2021
 Info: Command: quartus_sta sc_computer -c sc_computer
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1601,9 +1601,9 @@ Info (332146): Worst-case minimum pulse width slack is -2.174
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 5029 megabytes
-    Info: Processing ended: Fri Jun 04 18:05:00 2021
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 5033 megabytes
+    Info: Processing ended: Sun Jun 06 20:40:12 2021
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:21
 
 
